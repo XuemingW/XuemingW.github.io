@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>危学明 - 个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+            background: #f0f2f5;
+            color: #2c3e50;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .resume {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 48px 48px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 50%;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -5%;
+            width: 250px;
+            height: 250px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            margin-bottom: 16px;
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-size: 15px;
+            opacity: 0.9;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            opacity: 0.8;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 32px 48px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: linear-gradient(180deg, #0f3460, #16213e);
+            border-radius: 2px;
+        }
+
+        /* Introduction */
+        .intro-list {
+            list-style: none;
+        }
+
+        .intro-list li {
+            padding: 6px 0;
+            padding-left: 20px;
+            position: relative;
+            font-size: 15px;
+            color: #4a5568;
+        }
+
+        .intro-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            background: #0f3460;
+            border-radius: 50%;
+        }
+
+        /* Education */
+        .edu-item {
+            display: flex;
+            align-items: baseline;
+            padding: 8px 0;
+            gap: 16px;
+            font-size: 15px;
+        }
+
+        .edu-date {
+            color: #718096;
+            font-size: 14px;
+            white-space: nowrap;
+            min-width: 140px;
+        }
+
+        .edu-school {
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .edu-major {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* Work Experience */
+        .work-period {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .work-date {
+            background: #eef2f7;
+            color: #0f3460;
+            padding: 4px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .work-company {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+
+        .project {
+            margin: 20px 0;
+            padding: 20px 24px;
+            background: #f8fafc;
+            border-radius: 12px;
+            border-left: 3px solid #0f3460;
+        }
+
+        .project-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 6px;
+        }
+
+        .project-desc {
+            font-size: 14px;
+            color: #718096;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .project-list {
+            list-style: none;
+        }
+
+        .project-list li {
+            padding: 5px 0 5px 18px;
+            position: relative;
+            font-size: 14.5px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .project-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: #0f3460;
+            font-weight: bold;
+        }
+
+        .highlight {
+            color: #0f3460;
+            font-weight: 600;
+        }
+
+        /* Skills */
+        .skills-list {
+            list-style: none;
+        }
+
+        .skills-list li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.8;
+        }
+
+        .skills-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px;
+            height: 6px;
+            background: #0f3460;
+            border-radius: 50%;
+        }
+
+        /* Tags */
+        .tag {
+            display: inline-block;
+            background: #e8edf4;
+            color: #0f3460;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            margin: 2px 4px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px;
+            color: #a0aec0;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 640px) {
+            .container {
+                padding: 16px 8px;
+            }
+
+            .header {
+                padding: 32px 24px 28px;
+            }
+
+            .name {
+                font-size: 30px;
+            }
+
+            .section {
+                padding: 24px 24px;
+            }
+
+            .contact {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .edu-item {
+                flex-direction: column;
+                gap: 4px;
+            }
+
+            .edu-date {
+                min-width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="resume">
+            <!-- Header -->
+            <div class="header">
+                <div class="header-content">
+                    <div class="name">危学明</div>
+                    <div class="contact">
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            17723561745
+                        </div>
+                        <div class="contact-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            847574750@qq.com
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 个人简介 -->
+            <div class="section">
+                <div class="section-title">个人简介</div>
+                <ul class="intro-list">
+                    <li>硕士毕业后就职于腾讯科技，职级T9，有6年信息流内容推荐、数据增长分析相关经验</li>
+                    <li>有较好的学习能力和owner意识，乐观向上，情绪稳定</li>
+                </ul>
+            </div>
+
+            <!-- 教育背景 -->
+            <div class="section">
+                <div class="section-title">教育背景</div>
+                <div class="edu-item">
+                    <div class="edu-date">2016.09 - 2019.06</div>
+                    <div>
+                        <span class="edu-school">重庆邮电大学</span>
+                        <span class="edu-major"> · 软件工程（硕士）</span>
+                    </div>
+                </div>
+                <div class="edu-item">
+                    <div class="edu-date">2012.09 - 2016.06</div>
+                    <div>
+                        <span class="edu-school">重庆邮电大学</span>
+                        <span class="edu-major"> · 信息与计算科学（本科）</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 工作经历 -->
+            <div class="section">
+                <div class="section-title">工作经历</div>
+
+                <!-- 腾讯 CDG -->
+                <div class="work-period">
+                    <span class="work-date">2024.09 - 至今</span>
+                    <span class="work-company">腾讯科技 - CDG支付金融平台与数据部</span>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">1. 腾讯理财通 – 数据增长</div>
+                    <div class="project-desc">理财通是个专业财富管理平台，上线货、债、混合基金等1w+多元理财产品，千亿保有量，百万级DAU。</div>
+                    <ul class="project-list">
+                        <li>理财通站内的资产运营；联合算法上线分散度策略，智能调控资产保有量、构建用户资产种草值等级体系、识别用户交易时点偏好等，提升平台债基资产留存率<span class="highlight">+3%</span>，转化率<span class="highlight">+8%</span></li>
+                        <li>理财通外投人群挖掘；通过大零钱和银行卡有钱用户的挖掘、差异化出价等策略，相对净申购<span class="highlight">+11%</span></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">2. 微信支付信用卡 – 数据增长</div>
+                    <div class="project-desc">信用卡业务在微信支付的理财板块，帮助用户便捷还款和分期，还款GMV千亿/月，分期GMV百亿/月。</div>
+                    <ul class="project-list">
+                        <li>账单分期在贷用户识别、异动等数据线索能力构建，构建精细化投放能力，投放转化率提升<span class="highlight">14%</span></li>
+                        <li>场景分期中洞察拆解信用卡用户，识别分类典型客群，助力业务设计差异化经营策略，转化率<span class="highlight">+11%</span></li>
+                    </ul>
+                </div>
+
+                <!-- 腾讯 PCG -->
+                <div class="work-period">
+                    <span class="work-date">2019.07 - 2024.09</span>
+                    <span class="work-company">腾讯科技 - PCG社交增值产品部</span>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">3. QQ个性化商城 - 推荐负责人</div>
+                    <div class="project-desc">QQ个性化商城是一个专注于QQ装扮类售卖的商城，拥有10+品类装扮，40w+装扮物品，百万级DAU。</div>
+                    <ul class="project-list">
+                        <li>商城装扮推荐系统的构建，搭建召回层→精排层→重排层的3层推荐框架。引入双塔向量、用户偏好等多路召回策略；优化CTR、CTCVR的ESMM多目标模型；搭建冷启动、内容多样性等重排策略；商城ECPM提升<span class="highlight">15%+</span></li>
+                        <li>数据分析及监控，TAB分流层实验体系的搭建，提升实验置信度。协助商城改版，优化链路效率，用户分层挖掘客群需求，提升用户活跃性及粘性，商城留存率<span class="highlight">+10%+</span></li>
+                        <li>协同制定用户拉新、回流等运营策略，通过"每日签到"活动、"奔跑的小马"气泡热点运营、拉新回流<span class="highlight">20w+人</span></li>
+                    </ul>
+                </div>
+
+                <div class="project">
+                    <div class="project-title">4. QQ渠道广告投放 - 投放负责人</div>
+                    <div class="project-desc">手Q增值业务的红点和公众号渠道的广告投放，广告内容量100+，2000w+日下发UV。</div>
+                    <ul class="project-list">
+                        <li>负责手Q增值业务多广告位的广告推荐和用户分发，优化触达时机，构建多场景多目标排序模型，转化率提升<span class="highlight">18%+</span></li>
+                        <li>负责QQ会员公众号、黄钻公众号渠道的拉新和回流投放，渠道数据分析，长尾流量利用效率提升，日新增会员<span class="highlight">500+</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 个人技能与绩效 -->
+            <div class="section">
+                <div class="section-title">个人技能与绩效</div>
+                <ul class="skills-list">
+                    <li>
+                        技术栈：
+                        <span class="tag">推荐系统</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">机器学习</span>
+                        <span class="tag">Hive</span>
+                        <span class="tag">Spark</span>
+                        <span class="tag">数据分析</span>
+                        <span class="tag">增长策略</span>
+                    </li>
+                    <li>拥有一篇SCI论文、3个国家级发明专利、CET6级</li>
+                    <li>腾讯历史绩效：4&5星 4/11、3星 7/11</li>
+                </ul>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                © 2026 危学明 · Powered by GitHub Pages
+            </div>
+        </div>
+    </div>
+</body>
+</html>
