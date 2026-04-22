@@ -281,6 +281,54 @@
             font-weight: 500;
         }
 
+        /* Performance Badges */
+        .perf-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .perf-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .perf-badge .perf-star {
+            font-size: 16px;
+        }
+
+        .perf-outstanding {
+            background: linear-gradient(135deg, #fff7ed, #ffedd5);
+            color: #c2410c;
+            border: 1px solid #fed7aa;
+        }
+
+        .perf-outstanding .perf-star {
+            color: #ea580c;
+        }
+
+        .perf-good {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            color: #1d4ed8;
+            border: 1px solid #bfdbfe;
+        }
+
+        .perf-good .perf-star {
+            color: #2563eb;
+        }
+
+        .perf-stat {
+            background: #f1f5f9;
+            color: #475569;
+            border: 1px solid #e2e8f0;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
@@ -445,8 +493,23 @@
                         <span class="tag">增长策略</span>
                     </li>
                     <li>拥有一篇SCI论文、3个国家级发明专利、CET6级</li>
-                    <li>腾讯历史绩效：4&5星 4/11、3星 7/11</li>
                 </ul>
+                <div style="margin-top: 16px;">
+                    <div style="font-size: 14px; color: #718096; margin-bottom: 10px;">腾讯历史绩效：</div>
+                    <div class="perf-badges">
+                        <span class="perf-badge perf-outstanding">
+                            <span class="perf-star">★</span>
+                            Outstanding (4次)
+                        </span>
+                        <span class="perf-badge perf-good">
+                            <span class="perf-star">★</span>
+                            Good (7次)
+                        </span>
+                        <span class="perf-badge perf-stat">
+                            共 11 次绩效 · 高绩效占比 36%
+                        </span>
+                    </div>
+                </div>
             </div>
 
             <!-- Footer -->
