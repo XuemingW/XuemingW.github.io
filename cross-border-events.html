@@ -59,6 +59,63 @@
             padding: 40px;
         }
         
+        /* 城市分组标题 */
+        .city-section {
+            margin-bottom: 35px;
+        }
+        
+        .city-section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 3px solid #e9ecef;
+        }
+        
+        .city-section-title .city-flag {
+            font-size: 2em;
+        }
+        
+        .city-section-title .city-name {
+            font-size: 1.6em;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .city-section-title .city-count {
+            background: #667eea;
+            color: white;
+            padding: 3px 12px;
+            border-radius: 12px;
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+        
+        .city-section-title.shenzhen .city-name {
+            color: #667eea;
+        }
+        
+        .city-section-title.shenzhen {
+            border-bottom-color: #667eea;
+        }
+        
+        .city-section-title.shenzhen .city-count {
+            background: #667eea;
+        }
+        
+        .city-section-title.guangzhou .city-name {
+            color: #764ba2;
+        }
+        
+        .city-section-title.guangzhou {
+            border-bottom-color: #764ba2;
+        }
+        
+        .city-section-title.guangzhou .city-count {
+            background: #764ba2;
+        }
+        
         .event-card {
             background: white;
             border: 2px solid #e9ecef;
@@ -67,6 +124,7 @@
             margin-bottom: 25px;
             transition: all 0.3s ease;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            position: relative;
         }
         
         .event-card:hover {
@@ -75,11 +133,31 @@
             border-color: #667eea;
         }
         
+        .event-card .city-tag {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            padding: 4px 14px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            font-weight: 600;
+            color: white;
+        }
+        
+        .city-tag.shenzhen-tag {
+            background: linear-gradient(135deg, #667eea, #4f5bd5);
+        }
+        
+        .city-tag.guangzhou-tag {
+            background: linear-gradient(135deg, #764ba2, #9b59b6);
+        }
+        
         .event-title {
             font-size: 1.5em;
             color: #667eea;
             margin-bottom: 15px;
             font-weight: 600;
+            padding-right: 80px;
         }
         
         .event-info {
@@ -163,6 +241,11 @@
             font-size: 1.1em;
         }
         
+        .registration-info a {
+            color: white;
+            text-decoration: underline;
+        }
+        
         .no-events {
             text-align: center;
             padding: 60px 20px;
@@ -216,6 +299,16 @@
             .event-card {
                 padding: 20px;
             }
+            
+            .event-card .city-tag {
+                position: static;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+            
+            .event-title {
+                padding-right: 0;
+            }
         }
     </style>
 </head>
@@ -223,7 +316,7 @@
     <div class="container">
         <div class="header">
             <h1>🚀 深广跨境电商活动每日更新</h1>
-            <p>深圳·广州地区最近一周跨境电商相关活动</p>
+            <p>深圳·广州地区最新跨境电商相关活动 | 深圳优先 🏙️</p>
         </div>
         
         <div class="update-time">
@@ -239,181 +332,201 @@
         </div>
         
         <div class="footer">
-            <p>📡 数据来源：ikj168出海跨境电商导航</p>
+            <p>📡 数据来源：ikj168出海跨境电商导航 | 雨果跨境 | 活动行</p>
             <p>🔄 每日自动更新 | 最后更新：<span id="lastUpdate">-</span></p>
         </div>
     </div>
 
     <script>
-        // 嵌入的活动数据（最新数据）
+        // 嵌入式活动数据（按城市分组，深圳优先）
         const embeddedEvents = {
-  "update_time": "2026-07-05T17:38:57+08:00",
-  "total_events": 10,
-  "events": [
-    {
-      "title": "沃尔玛全球电商业务交流大会·广州站",
-      "date": "2026年7月1日14:00-17:00",
-      "location": "广东省广州市珠江新城兴安路3号广州富力丽思卡尔顿酒店",
-      "highlights": [
-        "零基础破局，新卖家冷启动从0到1实战策略",
-        "沃尔玛全链路物流解决方案助力卖家降本增效",
-        "时尚与日用百货品类爆款解析",
-        "平台合规要求与大客户专属成长路径解析"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/44853.html"
-    },
-    {
-      "title": "TikTok Shop × Shopee 东南亚本土电商·年中破局峰会·广州",
-      "date": "2026年7月2日13:00-18:00",
-      "location": "广东省广州市白云区",
-      "highlights": [
-        "解读2026最新流量政策+合规红线，避开\"本土店\"常见违规雷区",
-        "从TikTok短视频种草到Shopee货架收割的利润闭环实战",
-        "东南亚本土热销货源(日用百货、时尚3C) 直面源头工厂",
-        "深度拆解物流成本结构破解\"运费比货贵\"利润杀手"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/44853.html"
-    },
-    {
-      "title": "AI重构品牌·正在发生｜WAVE 2026 品牌全球化大会",
-      "date": "2026年7月3日9:30-18:00",
-      "location": "广东省深圳市",
-      "highlights": [
-        "2026 中国品牌全球化增长力洞察",
-        "从\"用AI\"到\"长成AI\"，品牌的新起点",
-        "2026年全球智能硬件品牌市场洞察",
-        "百亿卖家如何用AI重构独立站运营效率"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/45157.html"
-    },
-    {
-      "title": "TikTok Shop菲律宾本本新商闭门沙龙·FMCG专场—深圳站",
-      "date": "2026年7月8日13:30-16:30",
-      "location": "广东省深圳市龙岗区",
-      "highlights": [
-        "FMCG行业洞察",
-        "LifeStyle行业洞察及热卖品推荐",
-        "TikTok Symphony AI创意玩法",
-        "菲律宾企业主体架构搭建与税务优化方案"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/45157.html"
-    },
-    {
-      "title": "TikTok Shop 3C家电直播拍卖新赛道招商选品峰会",
-      "date": "2026年7月9日13:00-17:00",
-      "location": "广东省深圳市龙岗区杨山路乐荟中心T12栋2楼国际会议中心",
-      "highlights": [
-        "首场TikTok Shop 3C家电行业直播拍卖专项峰会",
-        "现场拆解直播拍卖新玩法，抢占赛道首发红利",
-        "行业 Top 商家亲授运营实战心得，复刻爆单方法论",
-        "选品/定价/节奏全维拆解，0到1快速跑通拍卖场",
-        "官方政策扶持+专属权益集中发布，曝光与激励双倾斜",
-        "重磅启动「千播计划」，资源直给助力商家起量"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/45157.html"
-    },
-    {
-      "title": "从\"流量捕手\"到\"品牌留量\" 飞轮私域「透明计划·摩斯码」增长沙龙",
-      "date": "2026年7月10日14:00-18:00",
-      "location": "广东省深圳市龙华区(地铁4号线龙华站)鸿荣源壹城中心",
-      "highlights": [
-        "韩国红利一站打通",
-        "二码合一增长引擎",
-        "亿级大卖实战复盘",
-        "数据驱动品牌留量"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/45157.html"
-    },
-    {
-      "title": "驭风行 向拉美 Shopee战略增长私享会-巴西专场",
-      "date": "2026年7月16日14:00-17:00",
-      "location": "广东省深圳市龙岗区",
-      "highlights": [
-        "Shopee轻出海模式、本土履约+解读",
-        "巴西税改深度解析，全流程合规应对，规避运营风险",
-        "聚焦巴西本地支付痛点与解决方案，提升回款效率与安全性"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/45157.html"
-    },
-    {
-      "title": "AI欧美破局，智启深湾—亚马逊+TikTok Shop 跨境出海·深圳千人峰会",
-      "date": "2026年7月16日9:00-17:30",
-      "location": "广东省深圳市龙岗区深圳坂田星河吉酒店2楼行政宴会厅",
-      "highlights": [
-        "复盘两大平台大促，解锁 AI工具红利，解析世界杯、返校季旺季机会",
-        "千万卖家拆解AI造品逻辑，分享多旺季完整运营复盘经验",
-        "双平台配套方案齐全，可定制合作，搭配旺季实操案例参考",
-        "平台官方答疑，卖家面对面洽谈，直击备货、流量等实操瓶颈"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/45157.html"
-    },
-    {
-      "title": "破局拉美 向新而行—2026拉美跨境电商赋能大会·广州站",
-      "date": "2026年7月23日13:30-17:00",
-      "location": "广东省广州市",
-      "highlights": [
-        "平台新政深度解读，红利直达，新站点与成本优势一目了然",
-        "选品与流量闭环，给你可复制落地的跨平台爆品打法",
-        "深耕墨西哥与巴西市场，打造全链路解决方案",
-        "拆解清关税务物流难题，应急方案兼具针对性与实操性",
-        "成熟大卖全案复盘，踩坑指南与重点赛道清晰明确"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/44853.html"
-    },
-    {
-      "title": "2026STE汕头产业带跨境电商精准选品对接会",
-      "date": "2026年7月28日10:00-12:00",
-      "location": "广东省深圳市",
-      "highlights": [
-        "搭建精准高效的采销对接平台",
-        "直面汕头优势产业集群的实力工厂与品牌商",
-        "深耕三大产业带实地走访：服饰内衣/家居用品/玩具，涵盖全品类货源"
-      ],
-      "registration": "扫码查看活动详情",
-      "source": "ikj168",
-      "source_url": "https://www.ikj168.com/44853.html"
-    }
-  ]
-};
+            "update_time": "2026-07-06T15:00:00+08:00",
+            "total_events": 9,
+            "cities": {
+                "shenzhen": {
+                    "name": "深圳市",
+                    "flag": "🏙️",
+                    "count": 6,
+                    "events": [
+                        {
+                            "title": "TikTok Shop菲律宾本本新商闭门沙龙·FMCG专场—深圳站",
+                            "date": "2026年7月8日（周三）13:30-16:30",
+                            "location": "广东省深圳市龙岗区",
+                            "city": "深圳",
+                            "highlights": [
+                                "FMCG行业深度洞察与趋势解读",
+                                "LifeStyle行业洞察及热卖品推荐",
+                                "TikTok Symphony AI创意玩法实操分享",
+                                "菲律宾企业主体架构搭建与税务优化方案"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/45157.html",
+                            "is_upcoming": true
+                        },
+                        {
+                            "title": "TikTok Shop 3C家电直播拍卖新赛道招商选品峰会",
+                            "date": "2026年7月9日（周四）13:00-17:00",
+                            "location": "广东省深圳市龙岗区杨山路乐荟中心T12栋2楼国际会议中心",
+                            "city": "深圳",
+                            "highlights": [
+                                "首场TikTok Shop 3C家电行业直播拍卖专项峰会",
+                                "现场拆解直播拍卖新玩法，抢占赛道首发红利",
+                                "行业Top商家亲授运营实战心得，复刻爆单方法论",
+                                "选品/定价/节奏全维拆解，0到1快速跑通拍卖场",
+                                "官方政策扶持+专属权益集中发布，曝光与激励双倾斜",
+                                "重磅启动「千播计划」，资源直给助力商家起量"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/45157.html",
+                            "is_upcoming": true
+                        },
+                        {
+                            "title": "从「流量捕手」到「品牌留量」—飞轮私域透明计划·摩斯码增长沙龙",
+                            "date": "2026年7月10日（周五）14:00-18:00",
+                            "location": "广东省深圳市龙华区（地铁4号线龙华站）鸿荣源壹城中心",
+                            "city": "深圳",
+                            "highlights": [
+                                "韩国红利一站打通，抢占新兴市场先机",
+                                "二码合一增长引擎，私域运营新范式",
+                                "亿级大卖实战复盘，复制可行性增长路径",
+                                "数据驱动品牌留量，从流量思维到品牌思维"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/45157.html",
+                            "is_upcoming": true
+                        },
+                        {
+                            "title": "驭风行 向拉美—Shopee战略增长私享会·巴西专场",
+                            "date": "2026年7月16日（周三）14:00-17:00",
+                            "location": "广东省深圳市龙岗区",
+                            "city": "深圳",
+                            "highlights": [
+                                "Shopee轻出海模式、本土履约+政策解读",
+                                "巴西税改深度解析，全流程合规应对，规避运营风险",
+                                "聚焦巴西本地支付痛点与解决方案，提升回款效率与安全性"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/45157.html",
+                            "is_upcoming": true
+                        },
+                        {
+                            "title": "AI欧美破局，智启深湾—亚马逊+TikTok Shop 跨境出海·深圳千人峰会",
+                            "date": "2026年7月16日（周四）9:00-17:30",
+                            "location": "广东省深圳市龙岗区深圳坂田星河吉酒店2楼行政宴会厅",
+                            "city": "深圳",
+                            "highlights": [
+                                "复盘两大平台大促，解锁AI工具红利，解析世界杯、返校季旺季机会",
+                                "千万卖家拆解AI造品逻辑，分享多旺季完整运营复盘经验",
+                                "双平台配套方案齐全，可定制合作，搭配旺季实操案例参考",
+                                "平台官方答疑，卖家面对面洽谈，直击备货、流量等实操瓶颈"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/45157.html",
+                            "is_upcoming": true
+                        },
+                        {
+                            "title": "2026STE汕头产业带跨境电商精准选品对接会",
+                            "date": "2026年7月28日（周二）10:00-12:00",
+                            "location": "广东省深圳市",
+                            "city": "深圳",
+                            "highlights": [
+                                "搭建精准高效的采销对接平台",
+                                "直面汕头优势产业集群的实力工厂与品牌商",
+                                "深耕三大产业带实地走访：服饰内衣/家居用品/玩具，涵盖全品类货源"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/44853.html",
+                            "is_upcoming": false
+                        }
+                    ]
+                },
+                "guangzhou": {
+                    "name": "广州市",
+                    "flag": "🏛️",
+                    "count": 3,
+                    "events": [
+                        {
+                            "title": "TEMU加拿大&墨西哥本土招商运营峰会·广州站",
+                            "date": "2026年7月10日（周五）13:30-16:00",
+                            "location": "广东省广州市番禺区巨大国际产业园5栋2楼国际会议厅",
+                            "city": "广州",
+                            "highlights": [
+                                "华南首场TEMU本土招商运营峰会，深耕加墨本土市场",
+                                "TEMU本土店团队首次全员集结，解读2026新战略布局",
+                                "加拿大&墨西哥消费趋势及品类机会全景拆解，精准选品",
+                                "官方团队全程陪跑，从入驻到日常运营全链路支持",
+                                "零佣金入驻+新品类流量倾斜，低成本快速启动",
+                                "平台官方+配套生态现场面对面建联，一站式资源对接"
+                            ],
+                            "registration": "免费报名，点击链接在线报名",
+                            "source": "雨果跨境",
+                            "source_url": "https://www.cifnews.com/activity/3057",
+                            "is_upcoming": true
+                        },
+                        {
+                            "title": "2026 Shopee城市巡回招商会·广州站",
+                            "date": "2026年7月23日（周四）",
+                            "location": "广东省广州市",
+                            "city": "广州",
+                            "highlights": [
+                                "Shopee平台最新招商政策解读",
+                                "广州本地化运营策略与案例分享",
+                                "平台重点品类招商与扶持计划"
+                            ],
+                            "registration": "链接报名",
+                            "source": "雨果跨境",
+                            "source_url": "https://www.cifnews.com/activity/series/87",
+                            "is_upcoming": false
+                        },
+                        {
+                            "title": "破局拉美 向新而行—2026拉美跨境电商赋能大会·广州站",
+                            "date": "2026年7月23日（周四）13:30-17:00",
+                            "location": "广东省广州市",
+                            "city": "广州",
+                            "highlights": [
+                                "平台新政深度解读，红利直达，新站点与成本优势一目了然",
+                                "选品与流量闭环，给你可复制落地的跨平台爆品打法",
+                                "深耕墨西哥与巴西市场，打造全链路解决方案",
+                                "拆解清关税务物流难题，应急方案兼具针对性与实操性",
+                                "成熟大卖全案复盘，踩坑指南与重点赛道清晰明确"
+                            ],
+                            "registration": "扫码查看活动详情",
+                            "source": "ikj168",
+                            "source_url": "https://www.ikj168.com/44853.html",
+                            "is_upcoming": false
+                        }
+                    ]
+                }
+            }
+        };
 
-        async function loadEvents() {
+        function loadEvents() {
             try {
-                // 首先使用嵌入的数据
+                // 显示嵌入数据
                 displayEvents(embeddedEvents);
                 
-                // 然后尝试从JSON文件加载最新数据（如果在服务器环境）
+                // 如果在服务器环境，尝试加载最新数据
                 if (window.location.protocol !== 'file:') {
-                    const response = await fetch('data/events.json?t=' + new Date().getTime());
-                    
-                    if (response.ok) {
-                        const eventsData = await response.json();
-                        // 只有当新数据比嵌入数据更新时才更新显示
-                        if (new Date(eventsData.update_time) > new Date(embeddedEvents.update_time)) {
-                            displayEvents(eventsData);
-                        }
-                    }
+                    fetch('data/events.json?t=' + new Date().getTime())
+                        .then(response => {
+                            if (response.ok) return response.json();
+                            throw new Error('Network error');
+                        })
+                        .then(eventsData => {
+                            if (new Date(eventsData.update_time) > new Date(embeddedEvents.update_time)) {
+                                displayEvents(eventsData);
+                            }
+                        })
+                        .catch(() => {});
                 }
             } catch (error) {
                 console.error('加载活动数据失败:', error);
-                // 已经显示了嵌入数据，所以不需要再做其他操作
             }
         }
 
@@ -423,13 +536,133 @@
             const eventCount = document.getElementById('eventCount');
             const lastUpdate = document.getElementById('lastUpdate');
             
-            // 更新时间信息
             const updateDate = new Date(data.update_time);
             updateTime.textContent = updateDate.toLocaleString('zh-CN');
             lastUpdate.textContent = updateDate.toLocaleString('zh-CN');
             
-            if (!data.events || data.events.length === 0) {
-                container.innerHTML = `
+            // 检查是否有城市分组数据
+            let totalEvents = 0;
+            let html = '';
+            
+            if (data.cities) {
+                // 新格式：按城市分组
+                // 深圳优先，广州其次
+                const cityOrder = ['shenzhen', 'guangzhou'];
+                
+                for (const cityKey of cityOrder) {
+                    const cityData = data.cities[cityKey];
+                    if (!cityData || !cityData.events || cityData.events.length === 0) continue;
+                    
+                    const cityColor = cityKey === 'shenzhen' ? 'shenzhen' : 'guangzhou';
+                    
+                    html += `
+                        <div class="city-section">
+                            <div class="city-section-title ${cityColor}">
+                                <span class="city-flag">${cityData.flag}</span>
+                                <span class="city-name">${cityData.name}</span>
+                                <span class="city-count">${cityData.events.length}场活动</span>
+                            </div>
+                    `;
+                    
+                    for (const event of cityData.events) {
+                        const tagClass = cityKey === 'shenzhen' ? 'shenzhen-tag' : 'guangzhou-tag';
+                        const tagLabel = cityKey === 'shenzhen' ? '深圳' : '广州';
+                        const upcomingBadge = event.is_upcoming ? '<span style="background:#ff6b6b;color:white;padding:2px 8px;border-radius:8px;font-size:0.7em;margin-left:8px;">本周</span>' : '';
+                        
+                        html += `
+                            <div class="event-card">
+                                <span class="city-tag ${tagClass}">📍 ${tagLabel}</span>
+                                <div class="event-title">${event.title}${upcomingBadge}</div>
+                                <div class="event-info">
+                                    <div class="info-item">
+                                        <span class="info-icon">📅</span>
+                                        <div class="info-content">
+                                            <div class="info-label">活动时间</div>
+                                            <div class="info-value">${event.date}</div>
+                                        </div>
+                                    </div>
+                                    <div class="info-item">
+                                        <span class="info-icon">📍</span>
+                                        <div class="info-content">
+                                            <div class="info-label">活动地点</div>
+                                            <div class="info-value">${event.location}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                ${event.highlights && event.highlights.length > 0 ? `
+                                    <div class="event-highlights">
+                                        <h4>💡 活动亮点</h4>
+                                        <ul>
+                                            ${event.highlights.map(h => `<li>${h}</li>`).join('')}
+                                        </ul>
+                                    </div>
+                                ` : ''}
+                                ${event.registration ? `
+                                    <div class="registration-info">
+                                        <h4>🎫 报名方式</h4>
+                                        <p>${event.registration}</p>
+                                        ${event.source_url ? `<p style="margin-top: 10px;"><a href="${event.source_url}" target="_blank">查看详情 →</a></p>` : ''}
+                                    </div>
+                                ` : ''}
+                            </div>
+                        `;
+                        totalEvents++;
+                    }
+                    
+                    html += '</div>';
+                }
+                
+                eventCount.textContent = totalEvents;
+            } else if (data.events) {
+                // 旧格式：简单列表（兼容）
+                totalEvents = data.events.length;
+                if (totalEvents === 0) {
+                    html = `
+                        <div class="no-events">
+                            <div class="no-events-icon">📅</div>
+                            <h3>暂无活动信息</h3>
+                            <p>最近一周内没有找到深圳/广州地区的跨境电商活动</p>
+                        </div>
+                    `;
+                } else {
+                    html = data.events.map(event => `
+                        <div class="event-card">
+                            <div class="event-title">${event.title}</div>
+                            <div class="event-info">
+                                <div class="info-item">
+                                    <span class="info-icon">📅</span>
+                                    <div class="info-content">
+                                        <div class="info-label">活动时间</div>
+                                        <div class="info-value">${event.date}</div>
+                                    </div>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-icon">📍</span>
+                                    <div class="info-content">
+                                        <div class="info-label">活动地点</div>
+                                        <div class="info-value">${event.location}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            ${event.highlights ? `
+                                <div class="event-highlights">
+                                    <h4>💡 活动亮点</h4>
+                                    <ul>${event.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
+                                </div>
+                            ` : ''}
+                            ${event.registration ? `
+                                <div class="registration-info">
+                                    <h4>🎫 报名方式</h4>
+                                    <p>${event.registration}</p>
+                                    ${event.source_url ? `<p style="margin-top:10px;"><a href="${event.source_url}" target="_blank">查看详情 →</a></p>` : ''}
+                                </div>
+                            ` : ''}
+                        </div>
+                    `).join('');
+                }
+                eventCount.textContent = totalEvents;
+            } else {
+                html = `
                     <div class="no-events">
                         <div class="no-events-icon">📅</div>
                         <h3>暂无活动信息</h3>
@@ -437,52 +670,11 @@
                     </div>
                 `;
                 eventCount.textContent = '0';
-                return;
             }
             
-            // 显示活动卡片
-            const eventsHTML = data.events.map((event, index) => `
-                <div class="event-card">
-                    <div class="event-title">${event.title}</div>
-                    <div class="event-info">
-                        <div class="info-item">
-                            <span class="info-icon">📅</span>
-                            <div class="info-content">
-                                <div class="info-label">活动时间</div>
-                                <div class="info-value">${event.date}</div>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-icon">📍</span>
-                            <div class="info-content">
-                                <div class="info-label">活动地点</div>
-                                <div class="info-value">${event.location}</div>
-                            </div>
-                        </div>
-                    </div>
-                    ${event.highlights && event.highlights.length > 0 ? `
-                        <div class="event-highlights">
-                            <h4>💡 活动亮点</h4>
-                            <ul>
-                                ${event.highlights.map(h => `<li>${h}</li>`).join('')}
-                            </ul>
-                        </div>
-                    ` : ''}
-                    ${event.registration ? `
-                        <div class="registration-info">
-                            <h4>🎫 报名方式</h4>
-                            <p>${event.registration}</p>
-                            ${event.source_url ? `<p style="margin-top: 10px;"><a href="${event.source_url}" target="_blank" style="color: white; text-decoration: underline;">查看详情</a></p>` : ''}
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('');
-            
-            container.innerHTML = eventsHTML;
-            eventCount.textContent = data.events.length;
+            container.innerHTML = html;
         }
 
-        // 页面加载时执行
         document.addEventListener('DOMContentLoaded', loadEvents);
     </script>
 </body>
