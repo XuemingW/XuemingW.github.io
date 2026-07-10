@@ -59,7 +59,6 @@
             padding: 40px;
         }
         
-        /* 城市分组标题 */
         .city-section {
             margin-bottom: 35px;
         }
@@ -221,7 +220,7 @@
         }
         
         .event-highlights li:before {
-            content: "▸";
+            content: "\25B8";
             position: absolute;
             left: 0;
             color: #667eea;
@@ -340,64 +339,14 @@
     <script>
         // 嵌入式活动数据（按城市分组，深圳优先）
         const embeddedEvents = {
-            "update_time": "2026-07-07T20:23:00+08:00",
-            "total_events": 21,
+            "update_time": "2026-07-10T13:18:00+08:00",
+            "total_events": 18,
             "cities": {
                 "shenzhen": {
                     "name": "深圳市",
                     "flag": "🏙️",
-                    "count": 15,
+                    "count": 12,
                     "events": [
-                        {
-                            "title": "TikTok Shop菲律宾本本新商闭门沙龙·FMCG专场—深圳站",
-                            "date": "2026年7月8日（周三）13:30-16:30",
-                            "location": "广东省深圳市龙岗区",
-                            "city": "深圳",
-                            "highlights": [
-                                "FMCG行业深度洞察与趋势解读",
-                                "LifeStyle行业洞察及热卖品推荐",
-                                "TikTok Symphony AI创意玩法实操分享",
-                                "菲律宾企业主体架构搭建与税务优化方案"
-                            ],
-                            "registration": "扫码查看活动详情",
-                            "source": "ikj168",
-                            "source_url": "https://www.ikj168.com/45157.html",
-                            "is_upcoming": true
-                        },
-                        {
-                            "title": "TikTok Shop 3C家电直播拍卖新赛道招商选品峰会",
-                            "date": "2026年7月9日（周四）13:00-17:00",
-                            "location": "广东省深圳市龙岗区杨山路乐荟中心T12栋2楼国际会议中心",
-                            "city": "深圳",
-                            "highlights": [
-                                "首场TikTok Shop 3C家电行业直播拍卖专项峰会",
-                                "现场拆解直播拍卖新玩法，抢占赛道首发红利",
-                                "行业Top商家亲授运营实战心得，复刻爆单方法论",
-                                "选品/定价/节奏全维拆解，0到1快速跑通拍卖场",
-                                "官方政策扶持+专属权益集中发布，曝光与激励双倾斜",
-                                "重磅启动「千播计划」，资源直给助力商家起量"
-                            ],
-                            "registration": "扫码查看活动详情",
-                            "source": "ikj168",
-                            "source_url": "https://www.ikj168.com/45157.html",
-                            "is_upcoming": true
-                        },
-                        {
-                            "title": "AI全链增效与价值创造——AI领航者闭门私享会",
-                            "date": "2026年7月9日（周四）14:00-18:00",
-                            "location": "广东省深圳市",
-                            "city": "深圳",
-                            "highlights": [
-                                "聚焦AI在跨境电商全链路中的增效应用",
-                                "关注AI技术如何为跨境业务创造实际价值",
-                                "限量名额闭门私享，行业深度交流",
-                                "雨果跨境AI工作坊系列深圳站"
-                            ],
-                            "registration": "限量名额免费参与，点击链接在线报名",
-                            "source": "雨果跨境",
-                            "source_url": "https://www.cifnews.com/activity/3056",
-                            "is_upcoming": true
-                        },
                         {
                             "title": "从「流量捕手」到「品牌留量」—飞轮私域透明计划·摩斯码增长沙龙",
                             "date": "2026年7月10日（周五）14:00-18:00",
@@ -656,21 +605,6 @@
                             "is_upcoming": false
                         },
                         {
-                            "title": "2026 Yandex Market官方首场千人品牌峰会",
-                            "date": "2026年7月31日（周五）14:00-17:30",
-                            "location": "广东省广州市香格里拉大酒店",
-                            "city": "广州",
-                            "highlights": [
-                                "Yandex Market官方首场千人品牌峰会，聚俄增长·盈领全球",
-                                "俄罗斯电商市场蓝海机遇与Yandex平台入驻政策",
-                                "品牌出海俄罗斯全链路解决方案"
-                            ],
-                            "registration": "点击链接在线报名",
-                            "source": "海多客",
-                            "source_url": "https://www.asiaecs.com/haiduokeevent-index-detail-46.html",
-                            "is_upcoming": false
-                        },
-                        {
                             "title": "2026跨境电商税务合规增长私享会·广州站",
                             "date": "2026年7月23日（周四）13:30-17:00",
                             "location": "广东省广州市番禺区巨大创意产业园5栋2楼3号会议室",
@@ -685,6 +619,21 @@
                             "source": "雨果跨境",
                             "source_url": "https://www.cifnews.com/activity/3049",
                             "is_upcoming": false
+                        },
+                        {
+                            "title": "2026 Yandex Market官方首场千人品牌峰会",
+                            "date": "2026年7月31日（周五）14:00-17:30",
+                            "location": "广东省广州市香格里拉大酒店",
+                            "city": "广州",
+                            "highlights": [
+                                "Yandex Market官方首场千人品牌峰会，聚俄增长·盈领全球",
+                                "俄罗斯电商市场蓝海机遇与Yandex平台入驻政策",
+                                "品牌出海俄罗斯全链路解决方案"
+                            ],
+                            "registration": "点击链接在线报名",
+                            "source": "海多客",
+                            "source_url": "https://www.asiaecs.com/haiduokeevent-index-detail-46.html",
+                            "is_upcoming": false
                         }
                     ]
                 }
@@ -693,10 +642,8 @@
 
         function loadEvents() {
             try {
-                // 显示嵌入数据
                 displayEvents(embeddedEvents);
                 
-                // 如果在服务器环境，尝试加载最新数据
                 if (window.location.protocol !== 'file:') {
                     fetch('data/events.json?t=' + new Date().getTime())
                         .then(response => {
@@ -725,13 +672,10 @@
             updateTime.textContent = updateDate.toLocaleString('zh-CN');
             lastUpdate.textContent = updateDate.toLocaleString('zh-CN');
             
-            // 检查是否有城市分组数据
             let totalEvents = 0;
             let html = '';
             
             if (data.cities) {
-                // 新格式：按城市分组
-                // 深圳优先，广州其次
                 const cityOrder = ['shenzhen', 'guangzhou'];
                 
                 for (const cityKey of cityOrder) {
@@ -799,7 +743,6 @@
                 
                 eventCount.textContent = totalEvents;
             } else if (data.events) {
-                // 旧格式：简单列表（兼容）
                 totalEvents = data.events.length;
                 if (totalEvents === 0) {
                     html = `
