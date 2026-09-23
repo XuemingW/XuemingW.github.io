@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>深广 AI/科技圈近期活动指南 | 9月7日-9月13日</title>
+<meta name="description" content="深圳与广州未来15天可线下参加的AI、科技、创业、Agent与开发者活动指南。">
+<title>深圳 &amp; 广州 AI/科技圈活动指南 | 9月24日-10月7日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
@@ -14,8 +15,6 @@
     padding: 24px 16px;
   }
   .container { max-width: 960px; margin: 0 auto; }
-
-  /* Header */
   .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: #fff;
@@ -24,14 +23,16 @@
     text-align: center;
   }
   .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
-  .header .subtitle { font-size: 15px; opacity: 0.9; }
+  .header .subtitle { font-size: 15px; opacity: 0.92; }
   .header .meta {
-    display: inline-flex; gap: 20px; margin-top: 16px;
-    font-size: 13px; opacity: 0.85;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 16px;
+    font-size: 13px;
+    opacity: 0.88;
   }
-  .header .meta span { display: flex; align-items: center; gap: 6px; }
-
-  /* Stats Bar */
   .stats-bar {
     display: flex;
     background: #fff;
@@ -40,17 +41,10 @@
     margin-bottom: 28px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
   }
-  .stat-item {
-    flex: 1;
-    padding: 18px 12px;
-    text-align: center;
-    border-right: 1px solid #eee;
-  }
+  .stat-item { flex: 1; padding: 18px 12px; text-align: center; border-right: 1px solid #eee; }
   .stat-item:last-child { border-right: none; }
   .stat-num { font-size: 24px; font-weight: 700; color: #667eea; }
   .stat-label { font-size: 12px; color: #888; margin-top: 4px; }
-
-  /* Section Title */
   .section-title {
     display: flex;
     align-items: center;
@@ -58,21 +52,17 @@
     margin: 32px 0 16px;
     font-size: 20px;
     font-weight: 700;
-    color: #1a1a2e;
   }
-  .section-title .badge {
+  .badge {
     display: inline-block;
     padding: 2px 12px;
     border-radius: 20px;
     font-size: 13px;
-    font-weight: 600;
     color: #fff;
   }
   .badge-sz { background: #e74c3c; }
   .badge-gz { background: #e67e22; }
   .badge-hot { background: #e91e63; }
-
-  /* Event Card */
   .event-card {
     background: #fff;
     border-radius: 12px;
@@ -80,21 +70,12 @@
     margin-bottom: 16px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     border-left: 4px solid #ddd;
-    transition: box-shadow 0.2s;
   }
-  .event-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.1); }
   .event-card.priority-high { border-left-color: #e91e63; }
   .event-card.priority-medium { border-left-color: #667eea; }
   .event-card.priority-low { border-left-color: #95a5a6; }
-
-  .event-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 12px;
-    margin-bottom: 12px;
-  }
-  .event-title { font-size: 17px; font-weight: 700; color: #1a1a2e; flex: 1; }
+  .event-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+  .event-title { font-size: 17px; font-weight: 700; flex: 1; }
   .event-date {
     background: #f8f9fa;
     border-radius: 8px;
@@ -104,9 +85,20 @@
     flex-shrink: 0;
   }
   .event-date .day { font-size: 20px; font-weight: 700; color: #e74c3c; }
-  .event-date .month { font-size: 11px; color: #888; }
-  .event-date .weekday { font-size: 11px; color: #aaa; }
-
+  .event-date .month, .event-date .weekday { font-size: 11px; color: #888; }
+  .event-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+  .tag { display: inline-block; padding: 2px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; }
+  .tag-free { background: #e8f5e9; color: #2e7d32; }
+  .tag-ai { background: #e3f2fd; color: #1565c0; }
+  .tag-agent { background: #b2dfdb; color: #004d40; }
+  .tag-business { background: #f3e5f5; color: #7b1fa2; }
+  .tag-vip { background: #fce4ec; color: #c62828; }
+  .tag-invest { background: #fff8e1; color: #f57f17; }
+  .tag-overseas { background: #ffecb3; color: #ff6f00; }
+  .tag-education { background: #c8e6c9; color: #2e7d32; }
+  .tag-paid { background: #ffcdd2; color: #b71c1c; }
+  .tag-government { background: #e8eaf6; color: #283593; }
+  .tag-hardware { background: #fff3e0; color: #e65100; }
   .event-info {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -117,65 +109,15 @@
   .info-item { display: flex; align-items: flex-start; gap: 6px; }
   .info-label { color: #888; white-space: nowrap; min-width: 48px; }
   .info-value { color: #333; }
-
-  .event-desc {
-    font-size: 13.5px;
-    color: #555;
-    margin-bottom: 12px;
-    padding: 12px;
-    background: #f8f9fa;
-    border-radius: 8px;
-  }
+  .event-desc { font-size: 13.5px; color: #555; margin-bottom: 12px; padding: 12px; background: #f8f9fa; border-radius: 8px; }
   .event-desc strong { color: #333; }
-
-  .event-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
-  .tag {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 12px;
-    font-weight: 500;
-  }
-  .tag-free { background: #e8f5e9; color: #2e7d32; }
-  .tag-ai { background: #e3f2fd; color: #1565c0; }
-  .tag-hardware { background: #fff3e0; color: #e65100; }
-  .tag-business { background: #f3e5f5; color: #7b1fa2; }
-  .tag-vip { background: #fce4ec; color: #c62828; }
-  .tag-robot { background: #e0f2f1; color: #00695c; }
-  .tag-invest { background: #fff8e1; color: #f57f17; }
-  .tag-new { background: #c8e6c9; color: #1b5e20; }
-  .tag-ecom { background: #e1f5fe; color: #0277bd; }
-  .tag-security { background: #fbe9e7; color: #bf360c; }
-  .tag-agent { background: #b2dfdb; color: #004d40; }
-  .tag-reschedule { background: #ffeb3b; color: #f57f17; }
-  .tag-video { background: #d1c4e9; color: #4a148c; }
-  .tag-paid { background: #ffcdd2; color: #b71c1c; }
-  .tag-chip { background: #fff9c4; color: #f57f17; }
-  .tag-saas { background: #ede7f6; color: #311b92; }
-  .tag-data { background: #c5cae9; color: #1a237e; }
-  .tag-cloud { background: #b3e5fc; color: #01579b; }
-  .tag-quantum { background: #e1bee7; color: #4a148c; }
-  .tag-education { background: #c8e6c9; color: #2e7d32; }
-  .tag-government { background: #e8eaf6; color: #283593; }
-  .tag-overseas { background: #ffecb3; color: #ff6f00; }
-  .tag-closed { background: #cfd8dc; color: #37474f; }
-  .tag-xr { background: #e1f5fe; color: #01579b; }
-  .tag-lowalt { background: #b2ebf2; color: #006064; }
-  .tag-python { background: #fff3e0; color: #e65100; }
-  .tag-vision { background: #e8f5e9; color: #2e7d32; }
-
-  .event-action {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #f0f0f0;
-    flex-wrap: wrap;
-  }
+  .speakers { margin: 8px 0 12px; padding: 10px 12px; background: #fdf6ec; border-radius: 8px; font-size: 13px; }
+  .speakers-title { font-weight: 600; color: #e67e22; margin-bottom: 4px; font-size: 12px; }
+  .speaker-item { color: #555; margin: 2px 0; }
+  .event-action { display: flex; align-items: center; gap: 12px; padding-top: 12px; border-top: 1px solid #f0f0f0; flex-wrap: wrap; }
   .register-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
     background: #667eea;
     color: #fff;
     padding: 8px 20px;
@@ -183,1223 +125,224 @@
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
-    transition: background 0.2s;
   }
   .register-btn:hover { background: #5568d3; }
-  .register-note { font-size: 12px; color: #999; }
-
-  /* Speaker list */
-  .speakers {
-    margin: 8px 0;
-    padding: 10px 12px;
-    background: #fdf6ec;
-    border-radius: 8px;
-    font-size: 13px;
-  }
-  .speakers-title { font-weight: 600; color: #e67e22; margin-bottom: 4px; font-size: 12px; }
-  .speaker-item { color: #555; margin: 2px 0; }
-
-  /* Tips */
-  .tips-box {
-    background: #fff;
-    border-radius: 12px;
-    padding: 24px;
-    margin-top: 28px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  }
-  .tips-box h3 { font-size: 17px; margin-bottom: 14px; color: #1a1a2e; }
+  .register-note { font-size: 12px; color: #888; }
+  .empty-state { text-align: center; padding: 32px 24px; color: #666; }
+  .empty-state strong { color: #333; }
+  .tips-box { background: #fff; border-radius: 12px; padding: 24px; margin-top: 28px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+  .tips-box h3 { font-size: 17px; margin-bottom: 14px; }
   .tips-list { list-style: none; }
-  .tips-list li {
-    padding: 8px 0 8px 28px;
-    position: relative;
-    font-size: 14px;
-    color: #555;
-    border-bottom: 1px solid #f5f5f5;
-  }
+  .tips-list li { padding: 8px 0 8px 28px; position: relative; font-size: 14px; color: #555; border-bottom: 1px solid #f5f5f5; }
   .tips-list li:last-child { border-bottom: none; }
-  .tips-list li::before {
-    content: "\1F4A1";
-    position: absolute;
-    left: 0;
-    top: 8px;
-  }
-
-  /* Footer */
-  .footer {
-    text-align: center;
-    padding: 24px;
-    color: #aaa;
-    font-size: 12px;
-  }
-
-  /* Responsive */
+  .tips-list li::before { content: "\1F4A1"; position: absolute; left: 0; top: 8px; }
+  .footer { text-align: center; padding: 24px; color: #888; font-size: 12px; }
+  .footer p + p { margin-top: 6px; }
   @media (max-width: 600px) {
-    .event-info { grid-template-columns: 1fr; }
+    body { padding: 12px 10px; }
+    .header { padding: 28px 18px; }
     .header h1 { font-size: 22px; }
+    .header .meta { gap: 8px 14px; }
+    .stats-bar { flex-wrap: wrap; }
+    .stat-item { min-width: 50%; border-bottom: 1px solid #eee; }
     .stat-num { font-size: 20px; }
+    .event-card { padding: 18px; }
+    .event-info { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 <div class="container">
-
-  <!-- Header -->
   <div class="header">
-    <h1>深圳 & 广州 AI/科技圈活动指南</h1>
-    <div class="subtitle">9月7日-9月13日 | 可线下参与的发布会、峰会、沙龙与路演</div>
+    <h1>深圳 &amp; 广州 AI/科技圈活动指南</h1>
+    <div class="subtitle">9月24日-10月7日｜面向 AI 创业者、OPC、开发者与产品人的线下活动</div>
     <div class="meta">
-      <span>📍 深圳为主，广州为辅</span>
-      <span>🗓 未来7天即时可参加</span>
-      <span>🔄 数据更新于 9月7日</span>
+      <span>📍 深圳优先，广州补充</span>
+      <span>🗓 未来15天滚动更新</span>
+      <span>🔄 更新于 9月23日 21:23</span>
     </div>
   </div>
 
-  <!-- Stats -->
   <div class="stats-bar">
-    <div class="stat-item">
-      <div class="stat-num">30</div>
-      <div class="stat-label">本周活动</div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">严选活动</div></div>
+    <div class="stat-item"><div class="stat-num">7</div><div class="stat-label">深圳场次</div></div>
+    <div class="stat-item"><div class="stat-num">0</div><div class="stat-label">广州可靠新增</div></div>
+    <div class="stat-item"><div class="stat-num">1</div><div class="stat-label">报名截止提醒</div></div>
+  </div>
+
+  <div class="section-title"><span class="badge badge-sz">深圳</span>未来15天可参加活动</div>
+
+  <div class="event-card priority-high">
+    <div class="event-header">
+      <div class="event-title">⭐ “AI+软件”吹风会暨人工智能应用服务商培育座谈会</div>
+      <div class="event-date"><div class="day">24</div><div class="month">9月</div><div class="weekday">周四</div></div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">21</div>
-      <div class="stat-label">深圳场次</div>
+    <div class="event-tags">
+      <span class="tag tag-vip">⭐ OPC优先推荐</span><span class="tag tag-government">政策与资源池</span><span class="tag tag-agent">行业智能体</span><span class="tag tag-free">免费报名</span>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">9</div>
-      <div class="stat-label">广州场次</div>
+    <div class="event-info">
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月24日 09:30-12:00（09:15签到）</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">龙华区数字创新中心 A 座 38 楼中型会议室</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">龙华区工业和信息化局</span></div>
+      <div class="info-item"><span class="info-label">对象：</span><span class="info-value">AI企业、软件企业、数字化服务商、园区与投资机构</span></div>
     </div>
-    <div class="stat-item">
-      <div class="stat-num">4</div>
-      <div class="stat-label">热门预告</div>
+    <div class="speakers">
+      <div class="speakers-title">🎯 核心内容</div>
+      <div class="speaker-item">• 解读人工智能应用服务商资源池、服务团组建与解决方案产品化入库</div>
+      <div class="speaker-item">• 华为云分享行业智能体生态，工业 AI 服务商介绍制造场景实践</div>
+      <div class="speaker-item">• 现场征集企业对场景开放、首购首用、算力券、模型接口与人才供给的建议</div>
+    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>这是本期最适合深圳 AI OPC 的活动。它不只谈趋势，而是直接对接服务商入池、政策、场景和供需资源，适合正在寻找企业客户或打磨行业解决方案的创业者。</div>
+    <div class="event-action">
+      <a href="https://ssia.org.cn/page59?article_id=2973" target="_blank" rel="noopener noreferrer" class="register-btn">查看官方通知与报名码</a>
+      <span class="register-note">拟限 50 人，建议立即报名；以协会最新通知为准</span>
     </div>
   </div>
 
-  <!-- ============ 深圳 ============ -->
-  <div class="section-title">
-    <span class="badge badge-sz">深圳</span>
-    未来7天可参加活动
-  </div>
-  <!-- 全球AI眼镜峰会 -->
   <div class="event-card priority-medium">
     <div class="event-header">
-      <div class="event-title">🆕 2026 全球 AI 眼镜产业供应链峰会（光博会前夕 · 15+款真机上手）</div>
-      <div class="event-date">
-        <div class="day">7</div>
-        <div class="month">9月</div>
-        <div class="weekday">周一</div>
-      </div>
+      <div class="event-title">AI × TikTok 出海沙龙</div>
+      <div class="event-date"><div class="day">26</div><div class="month">9月</div><div class="weekday">周六</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-new">🆕 新增</span>
-      <span class="tag tag-xr">AI眼镜</span>
-      <span class="tag tag-hardware">供应链</span>
-      <span class="tag tag-free">免费</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-ai">AI内容生产</span><span class="tag tag-overseas">TikTok出海</span><span class="tag tag-business">增长</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月7日（周一）14:00-18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳宝安新安街道海秀路鹏鼎时代大厦 27 楼</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">维深信息 Wellsenn XR</span></div>
-      <div class="info-item"><span class="info-label">指导：</span><span class="info-value">深圳市宝安工信局 × 深圳市宝安区新安街道办事处</span></div>
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月26日 09:00-18:00</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳（报名后告知详细地址）</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">柯沃跨境</span></div>
+      <div class="info-item"><span class="info-label">报名：</span><span class="info-value">页面二维码报名，票价以主办方为准</span></div>
     </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 议程与体验</div>
-      <div class="speaker-item">• 15+ 款最新 AI 眼镜真机开放上手：雷鸟、华为、闪极、科大讯飞、阿里千问、Meta、影目等</div>
-      <div class="speaker-item">• 演讲方向：智能眼镜解决方案、Eye-Tracking、运动防抖算法、高密度 FPC、Chiplet 交互创新</div>
-      <div class="speaker-item">• 嘉宾：英飞凌、极豪科技、超像素科技、则成电子、易天科技、勇芯科技等产业链代表</div>
-    </div>
-    <div class="event-desc"><strong>光博会前夕聚焦 AI 眼镜供应链的产业对接专场。</strong>从芯片、传感器、光学模组到整机量产，一站式看清消费级 AI 眼镜真实产品力与供应链底座</div>
-    <div class="event-action">
-      <span class="register-note">免费，扫码报名，席位限100人先到先得。咨询：Tim 189-3889-3802（微信同号）</span>
-    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>适合准备做海外内容、跨境电商或 AI 营销服务的 OPC，重点价值在于验证“AI 生产内容 + TikTok 获取流量”的获客闭环。</div>
+    <div class="event-action"><a href="https://lianpu.com/event/shen-zhen-huo-dong-aitiktok-chu-hai-sha-long" target="_blank" rel="noopener noreferrer" class="register-btn">查看详情与报名码</a></div>
   </div>
-  <!-- IFOC -->
+
   <div class="event-card priority-high">
     <div class="event-header">
-      <div class="event-title">⭐ IFOC 2026 第24届讯石光通信大会（光启智算 · 连接未来）</div>
-      <div class="event-date">
-        <div class="day">7-8</div>
-        <div class="month">9月</div>
-        <div class="weekday">周一-二</div>
-      </div>
+      <div class="event-title">⭐ 科创榜路演对接会暨粤港澳大湾区科创百强榜预选</div>
+      <div class="event-date"><div class="day">26</div><div class="month">9月</div><div class="weekday">周六</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 光通信年度峰会</span>
-      <span class="tag tag-ai">AI智算光互联</span>
-      <span class="tag tag-hardware">800G-3.2T</span>
-      <span class="tag tag-paid">¥1000起</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-invest">融资路演</span><span class="tag tag-business">产业合作</span><span class="tag tag-ai">AI/硬科技可报</span><span class="tag tag-paid">¥0-999</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月7日-8日（周一-周二）08:30 - 18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳国际会展中心洲际酒店</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳市讯石科技有限公司 × 深圳市电子学会</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">3000+ 专业观众，200+ 董事长/CEO，300+ 技术&市场专家</span></div>
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月26日 13:30-16:30</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">南山区三航科技大厦（审核通过后通知）</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳市互联网创业创新服务促进会</span></div>
+      <div class="info-item"><span class="info-label">对象：</span><span class="info-value">高新技术、专精特新、投后企业与科创项目</span></div>
     </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 大会看点</div>
-      <div class="speaker-item">• 1 场智算主论坛 + 10 场平行专题论坛 + 多场圆桌沙龙</div>
-      <div class="speaker-item">• 覆盖 AI 智算光互联、CPO/NPO、800G→3.2T 光模块、空芯光纤、算力集群网络</div>
-      <div class="speaker-item">• 嘉宾包括 Nvidia、博通、Marvell、华为、中兴、三大运营商、阿里云、腾讯云等</div>
-      <div class="speaker-item">• 9/7 展商供需配对会 + 分析师闭门会；9/8 主论坛 + 新品发布 + 人才论坛 + 答谢晚宴</div>
-    </div>
-    <div class="event-desc"><strong>光通信 3.0 智算时代标杆盛会。</strong>AI 算力爆发推动光通信全产业链升级，IFOC 2026 完整勾勒从光芯片、高速光模块到算力网络架构的产业全景</div>
-    <div class="event-action">
-      <a href="http://www.iccsz.com/4g/news.Asp?ID=0c7cba506a2149a69f22dd16a3837196" target="_blank" class="register-btn" style="background:#e91e63;">🌐 大会报名</a>
-      <span class="register-note">标准票 ¥2500 / 听会票 ¥1000；会员享赠票</span>
-    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>如果你已经有 Demo、客户验证或融资计划，这场比泛泛交流更有效；可以把产品放到投资人与产业方都在场的环境里测试叙事和需求。</div>
+    <div class="event-action"><a href="https://lianpu.com/event/ke-chuang-bang-lu-yan-dui-jie-hui-di-24-qi-ji-2026-yue-gang" target="_blank" rel="noopener noreferrer" class="register-btn">查看详情与报名码</a></div>
   </div>
-  <!-- 走进腾讯 -->
+
   <div class="event-card priority-high">
     <div class="event-header">
-      <div class="event-title">⭐ 聚焦 AI 时代软件工程创新实践 —— 走进腾讯滨海大厦（深软协第16期）</div>
-      <div class="event-date">
-        <div class="day">8</div>
-        <div class="month">9月</div>
-        <div class="weekday">周二</div>
-      </div>
+      <div class="event-title">⭐ AI 商业应用沙龙｜OPC 获客 · Agent 交付 · 品牌出海</div>
+      <div class="event-date"><div class="day">27</div><div class="month">9月</div><div class="weekday">周日</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 腾讯官方</span>
-      <span class="tag tag-ai">AI Native研效</span>
-      <span class="tag tag-agent">Agent</span>
-      <span class="tag tag-free">免费</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-vip">⭐ 本期最匹配</span><span class="tag tag-agent">Agent交付</span><span class="tag tag-business">OPC获客</span><span class="tag tag-overseas">品牌出海</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月8日（周二）13:30 - 18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">腾讯滨海大厦（南山区）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳市软件行业协会 × PMI中国 × 腾讯</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">150+ 人</span></div>
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月27日 14:00-18:00</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳清华大学研究院园区内</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">大湾区 AI 知行会 × 商界·木兰荟广东</span></div>
+      <div class="info-item"><span class="info-label">嘉宾：</span><span class="info-value">OPC创业者、AI实战派、品牌与内容增长实践者</span></div>
     </div>
     <div class="speakers">
-      <div class="speakers-title">🎤 议程亮点</div>
-      <div class="speaker-item">• 腾讯 AI Native 研效一体化方案及 TAPD 项目管理智能助手 NPC</div>
-      <div class="speaker-item">• CNB 实战：云原生 DevOps 与工程智能化实践</div>
-      <div class="speaker-item">• AI 时代软件工程能力建设：CSMM 体系与企业能力提升</div>
-      <div class="speaker-item">• WorkBuddy & CodeBuddy：手把手带你玩转腾讯小龙虾</div>
-      <div class="speaker-item">• 企业级智能体全景分析与金融场景实践：项目管理如何承接数字员工交付</div>
+      <div class="speakers-title">🎯 讨论重点</div>
+      <div class="speaker-item">• OPC 如何持续获客，而不是只会做 Demo</div>
+      <div class="speaker-item">• Agent 项目从需求判断到交付的真实过程</div>
+      <div class="speaker-item">• 用内容与品牌进入海外市场</div>
     </div>
-    <div class="event-desc"><strong>深软协项目管理专题活动第16期，走进腾讯。</strong>围绕「研发管理 · 工程智能 · 数字协同」，从 AI Native 研效、云原生 DevOps、AI Coding 到数字员工赋能项目管理</div>
-    <div class="event-action">
-      <a href="https://sh.huodongxing.com/event/1874899064300" target="_blank" class="register-btn" style="background:#e91e63;">🌐 活动行报名</a>
-      <span class="register-note">免费，限企业研发/项目管理/技术决策者</span>
-    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>与你当前阶段最直接相关。主题覆盖 OPC 最容易卡住的三件事——获客、交付和出海，适合带着自己的项目与具体问题去交流。</div>
+    <div class="event-action"><a href="https://lianpu.com/event/ai-shang-ye-ying-yong-sha-long-opc-huo-ke-agent-jiao-fu-pin" target="_blank" rel="noopener noreferrer" class="register-btn">查看详情与报名码</a></div>
   </div>
-  <!-- GEIA -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">⭐ GEIA 具身智能创新周暨 Rebuild-Z × GEIA AI 黑客松（大中华喜来登酒店）</div>
-      <div class="event-date">
-        <div class="day">8-11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周二-五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 亚太最大具身智能盛会之一</span>
-      <span class="tag tag-robot">人形机器人</span>
-      <span class="tag tag-ai">AI黑客松</span>
-      <span class="tag tag-paid">¥99起</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月8-11日（黑客松 48 小时；主论坛与展览 9/9-10）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳大中华喜来登酒店</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">Rebuild-Z 硬科技社区 × GEIA 全球具身智能加速器 × 深圳科创学院</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">1500+ 行业嘉宾、150+ 演讲嘉宾、60+ 展商、200+ 高校黑客松选手</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 活动亮点</div>
-      <div class="speaker-item">• 9/9 开幕 + GEIA 主论坛：50+ 顶尖讲者（银河通用、傅利叶、清华、港大等）</div>
-      <div class="speaker-item">• 技术创新展：60+ 头部展商，整机/大模型/灵巧手/核心零部件全产业链</div>
-      <div class="speaker-item">• 9/9 晚间「人机共生」元启奖颁奖盛典 + 人形机器人 T 台秀 + 33 项行业大奖</div>
-      <div class="speaker-item">• 9/10 12 场平行论坛 + 48 小时黑客松真机部署冲刺</div>
-    </div>
-    <div class="event-desc"><strong>亚太最大具身智能盛会之一 + 48 小时 AI 黑客松。</strong>定向招募全球高校 200 名优秀选手，优秀项目可直接对接一线 VC、知名企业和媒体资源</div>
-    <div class="event-action">
-      <a href="https://sh.huodongxing.com/event/3872191878200" target="_blank" class="register-btn" style="background:#e91e63;">🌐 游客报名</a>
-      <span class="register-note">¥99-178，支持退款</span>
-    </div>
-  </div>
-  <!-- CIOE三展 -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">⭐ 三展联动！CIOE 中国光博会 + elexcon 电子展 + IICIE 集成电路创新博览会</div>
-      <div class="event-date">
-        <div class="day">9-11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三-五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 三展联动</span>
-      <span class="tag tag-chip">集成电路</span>
-      <span class="tag tag-hardware">光电+电子</span>
-      <span class="tag tag-ai">AI算力</span>
-      <span class="tag tag-free">免费预登记</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日-11日 09:00-18:00（末日至14:30）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳国际会展中心（宝安新馆）1-16号馆</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">CIOE × elexcon（博闻创意会展）× IICIE</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">32万㎡，5000+参展企业，24万+专业观众，90+同期论坛</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 三展各有侧重 + 同期重磅论坛</div>
-      <div class="speaker-item">• CIOE 光博会（1-13号馆）：光通信、精密光学、激光、红外传感、AR/VR 光学等</div>
-      <div class="speaker-item">• elexcon 电子展（16号馆）：嵌入式与边缘AI、芯片/存储、电源功率半导体、汽车电子等</div>
-      <div class="speaker-item">• IICIE 集成电路展（14-16号馆）：芯片设计、晶圆制造、封装测试、核心设备、关键材料</div>
-      <div class="speaker-item">• 🆕 第八届中国嵌入式技术大会（9/9-10 16号馆）：边缘AI·机器人创新·工业能源三论坛</div>
-      <div class="speaker-item">• 🆕 AI算力时代硅光产业峰会（9/10 14号馆）：CPO/光电异构集成全链条</div>
-      <div class="speaker-item">• 🆕 第八届硬核芯生态大会（9/10 14号馆）：端侧AI·汽车芯片·芯算力三大论坛+颁奖盛典</div>
-      <div class="speaker-item">• 一证通行三展，打通光电-电子-芯片全链路，AI算力革命一站式对接</div>
-    </div>
-    <div class="event-desc"><strong>华南地区年度最大三展联动！CIOE 光博会 × elexcon 电子展 × IICIE 集成电路创新博览会同期同馆举办。</strong>一张预登记门票三展通用，免费入场。面向行业专业观众，未成年人谢绝入场</div>
-    <div class="event-action">
-      <a href="https://reg.cioe.cn/cn/index.html" target="_blank" class="register-btn" style="background:#e91e63;">🌐 免费预登记</a>
-      <span class="register-note">免费，实名预登记，人证合一。⚠️ 预登记已截止（9月8日），未登记者无法现场补票</span>
-    </div>
-  </div>
-  <!-- SIVA -->
+
   <div class="event-card priority-medium">
     <div class="event-header">
-      <div class="event-title">SIVA 2026 深圳国际 VR/AR 博览会（CIOE 同期 · 空间计算全产业链）</div>
-      <div class="event-date">
-        <div class="day">9-11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三-五</div>
-      </div>
+      <div class="event-title">人工智能时代未来教育创新研讨会</div>
+      <div class="event-date"><div class="day">27</div><div class="month">9月</div><div class="weekday">周日</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-xr">VR/AR/XR</span>
-      <span class="tag tag-ai">AI眼镜</span>
-      <span class="tag tag-hardware">空间计算</span>
-      <span class="tag tag-free">免费</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-education">AI教育</span><span class="tag tag-agent">教育智能体</span><span class="tag tag-free">免会务费</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日-11日 09:00-18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳国际会展中心（宝安新馆）2号馆</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">CIOE × SIVA（深圳协伴展览 × 深圳市增强现实技术应用协会 × 追焦XR）</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">100+ 全产业链展商，15万+ 专业观众</span></div>
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月27日 13:30-17:30（议程 14:00 开始）</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳大学致信楼 107 会议室</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳大学</span></div>
+      <div class="info-item"><span class="info-label">承办：</span><span class="info-value">深圳大学电子与信息工程学院 × 深圳市计算机学会</span></div>
     </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 四大展区 + 四场论坛 + 两场闭门会</div>
-      <div class="speaker-item">• MR/AR终端供应链拆解展：13款硬件真机完整拆解，覆盖AI眼镜/AR眼镜/MR头显</div>
-      <div class="speaker-item">• 2026 VR/AR/AI眼镜新品展：50+品牌62款产品，Meta/华为/雷鸟/Rokid等旗舰真机上手</div>
-      <div class="speaker-item">• 9/9 全球空间计算产业发展论坛 + AR/VR光学技术高峰论坛 + SIVA Awards颁奖</div>
-      <div class="speaker-item">• 9/10 AI AR眼镜产业发展峰会 + AI眼镜与智能体闭门研讨会（定邀）</div>
-      <div class="speaker-item">• 9/11 大空间交互与沉浸体验技术高峰论坛</div>
-    </div>
-    <div class="event-desc"><strong>AR/VR领域全产业链核心盛会！与CIOE光博会同期举办。</strong>从光波导、微显示到终端整机和创新应用，一站式呈现空间计算产业最前沿。拆解展看供应链纵深，新品展看终端创新高度</div>
+    <div class="event-desc"><strong>为什么值得去：</strong>适合教育 AI、知识产品或校园场景创业者。院校、腾讯云与产业嘉宾同场，能更快理解教育智能体的真实采购方、使用者和落地限制。</div>
     <div class="event-action">
-      <a href="https://reg.cioe.cn/cn/index.html" target="_blank" class="register-btn" style="background:#e91e63;">🌐 CIOE预登记入场</a>
-      <span class="register-note">免费，CIOE一证通行三展+SIVA</span>
+      <a href="https://news.szccf.org.cn/archives/4197" target="_blank" rel="noopener noreferrer" class="register-btn">查看官方议程与报名码</a>
+      <span class="register-note">不收取会务费，交通食宿自理</span>
     </div>
   </div>
-  <!-- OPC大会 -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">⭐ 星火燎原·智能宇宙 — 首届企业家个人超级智能与OPC生态大会（南山凯宾斯基）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 三十人论坛</span>
-      <span class="tag tag-ai">个人超级智能</span>
-      <span class="tag tag-agent">数字生命体</span>
-      <span class="tag tag-business">OPC一人公司</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）09:00 - 17:30</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳南山区凯宾斯基酒店</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">元宇宙与人工智能三十人论坛 × 坚持企业家俱乐部 × RWA研究院</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">线下1000人 + 核心特邀嘉宾100人</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 大会亮点</div>
-      <div class="speaker-item">• 站在图灵机90周年、达特茅斯会议70周年历史坐标，致敬思想星火</div>
-      <div class="speaker-item">• 首发：企业家个人超级智能框架与数字生命体产品体系</div>
-      <div class="speaker-item">• 院士/诺奖/图灵奖获得者齐聚，美国医学与生物工程院院士张学记确认出席</div>
-      <div class="speaker-item">• 全球OPC创新大赛总决赛 + 《OPC与个人超级智能》新书发布 + 全网共创启动</div>
-      <div class="speaker-item">• 上市公司组织AI高峰论坛 + 产业AI重构圆桌 + 开发者派对</div>
-    </div>
-    <div class="event-desc"><strong>图灵机90周年 + 达特茅斯会议70周年双纪念节点！AI从公共工具走向个人，从一次性助手走向持续成长的智能延伸。</strong>聚焦企业家个人超级智能、数字生命体与OPC（一人公司）新组织方式</div>
-    <div class="event-action">
-      <a href="https://www.10100.com/hd/149321572" target="_blank" class="register-btn" style="background:#e91e63;">🌐 报名入口</a>
-      <span class="register-note">支持退款；线下1000人规模</span>
-    </div>
-  </div>
-  <!-- AI智能体组织重塑 -->
+
   <div class="event-card priority-medium">
     <div class="event-header">
-      <div class="event-title">AI 智能体·组织重塑先锋实践大会 · 实在智能8周年（龙岗坂田）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
+      <div class="event-title">AI + 外贸增长系统｜AI 社媒获客 &amp; AccioWork 智能工作坊</div>
+      <div class="event-date"><div class="day">29</div><div class="month">9月</div><div class="weekday">周二</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-agent">AI Agent</span>
-      <span class="tag tag-business">组织重塑</span>
-      <span class="tag tag-ai">制造业落地</span>
-      <span class="tag tag-paid">¥0-69.9</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-overseas">外贸出海</span><span class="tag tag-agent">AI工作流</span><span class="tag tag-business">社媒获客</span><span class="tag tag-paid">¥99-599</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）13:30 - 17:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳龙岗区坂田乐荟国际会议中心2楼</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">实在智能（8周年生态创新大会）</span></div>
-      <div class="info-item"><span class="info-label">对象：</span><span class="info-value">企业创始人、CIO、IT主管、运营/财务/电商/制造业管理者</span></div>
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月29日 13:30-17:00</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳（报名后查看详细地址）</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">汉游出海 × 全橙跨境 × 山海会</span></div>
+      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">外贸增长方法 + AI工作流实操</span></div>
     </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 实战嘉宾与硬指标</div>
-      <div class="speaker-item">• 裕同科技林建：生产报表4h→20min，内勤重复事务减少50%，流程响应提速45%</div>
-      <div class="speaker-item">• 德赛西威张杰：管理响应缩短50%，协同效率提升60%，重复沟通减少40%</div>
-      <div class="speaker-item">• 海龟男孩：多平台取数3h→10min，报表工作量减少80%，查询效率提升12倍</div>
-      <div class="speaker-item">• 实在智能CEO孙林君定调：从"+AI"到"AI+"的企业重塑路径</div>
-    </div>
-    <div class="event-desc"><strong>把"企业智能体的落地"一次性讲清楚！</strong>每位嘉宾分享都有硬指标支撑，每个案例都是已发生的真实结果。开场抽奖 + 峰场收官抽大奖（大疆 Pocket 4）</div>
-    <div class="event-action">
-      <a href="https://freefield.huodongxing.com/event/7875038105700" target="_blank" class="register-btn" style="background:#e91e63;">🌐 活动行报名</a>
-      <span class="register-note">早鸟¥69.9 / 免费票可选；支持退款至9/7</span>
-    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>适合把 AI 服务卖给外贸企业，或为自己的产品寻找海外客户。重点观察工作流是否真的能带来线索，而不是只提高内容产量。</div>
+    <div class="event-action"><a href="https://lianpu.com/event/ai-wai-mao-zeng-zhang-xi-tong-quan-yu-huo-ke-chao-ji-tuan-du" target="_blank" rel="noopener noreferrer" class="register-btn">查看详情与报名码</a></div>
   </div>
-  <!-- AI安防 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">第四届 AI 安防与视觉技术创新发展论坛（CIOE 中国光博会同期）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-security">AI安防</span>
-      <span class="tag tag-ai">视觉技术</span>
-      <span class="tag tag-hardware">光博会</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）13:15 - 17:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳国际会展中心 6 号馆二楼 6C 会议室</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳市智慧安防商会 × 中国国际光电博览会（CIOE）</span></div>
-    </div>
-    <div class="event-desc"><strong>CIOE 中国光博会同期论坛，聚焦 AI 安防与视觉技术创新。</strong>覆盖单光子成像、认知智能、光交换、光学镜头、无人机影像模组等前沿方向</div>
-    <div class="event-action">
-      <a href="https://sz.huodongxing.com/event/2875435050200" target="_blank" class="register-btn" style="background:#e91e63;">🌐 活动行报名</a>
-      <span class="register-note">免费，CIOE 同期</span>
-    </div>
-  </div>
-  <!-- 智能家居 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">AI 重构 · 自主进化 —— 2026 智能家居发展趋势高峰论坛（CIOE 同期）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-hardware">智能家居</span>
-      <span class="tag tag-ai">物理AI</span>
-      <span class="tag tag-cloud">光+智能</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）13:00 - 17:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳国际会展中心（宝安新馆）6 号馆二楼 6A</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">千家智客 × CIOE 中国光博会</span></div>
-    </div>
-    <div class="event-desc"><strong>围绕「光 + 智能」融合赛道，汇聚智能家居、光通信、半导体、传感器等领域大咖。</strong>全国巡讲深圳首站，后续成都/西安/北京/上海/广州</div>
-    <div class="event-action">
-      <a href="https://hdxu.cn/1KkJ0" target="_blank" class="register-btn" style="background:#e91e63;">🌐 报名入口</a>
-      <span class="register-note">免费，席位有限，先到先得</span>
-    </div>
-  </div>
-  <!-- 第三届AI消费电子论坛 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">第三届 AI 赋能消费电子创新论坛（CIOE/elexcon 同期）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-ai">AI+消费电子</span>
-      <span class="tag tag-hardware">电子展</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳宝安国际会展中心 14 号馆馆内会议室</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">华强电子网</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">elexcon 深圳国际电子展同期论坛</span></div>
-    </div>
-    <div class="event-desc"><strong>elexcon 电子展同期论坛，聚焦 AI 赋能消费电子产业链创新。</strong>覆盖 AI 硬件、端侧大模型、智能穿戴等前沿方向，适合消费电子产品经理与硬件工程师</div>
-    <div class="event-action">
-      <span class="register-note">免费，CIOE/elexcon 预登记后到场参加；活动行搜索"AI赋能消费电子"</span>
-    </div>
-  </div>
-  <!-- 具身智能产业大会 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">2026 具身智能产业大会（CIOE 同期 · 蜗牛工场）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-robot">具身智能</span>
-      <span class="tag tag-ai">人形机器人</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳宝安国际展馆 15 号馆会议室</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">蜗牛工场</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">CIOE 中国光博会同期产业大会</span></div>
-    </div>
-    <div class="event-desc"><strong>CIOE 同期具身智能产业大会，聚焦人形机器人全产业链。</strong>覆盖整机、大模型、灵巧手、核心零部件等关键技术成果，与 GEIA 创新周形成双场联动</div>
-    <div class="event-action">
-      <span class="register-note">免费，CIOE 预登记后到场参加；活动行搜索"具身智能产业大会"</span>
-    </div>
-  </div>
-  <!-- 福田图书馆小红书 -->
+
   <div class="event-card priority-low">
     <div class="event-header">
-      <div class="event-title">「数智+N」AI 系列课 · 小红书从 0 到 1 — AI 帮你日更不重样（福田区图书馆）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
+      <div class="event-title">教育行业 AI 化改造落地工作坊｜深圳站</div>
+      <div class="event-date"><div class="day">29</div><div class="month">9月</div><div class="weekday">周二</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-education">公益免费</span>
-      <span class="tag tag-ai">小红书+AI</span>
-      <span class="tag tag-video">内容创作</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-education">教育行业</span><span class="tag tag-ai">业务改造</span><span class="tag tag-free">免费</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）19:00-21:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">福田区图书馆负一楼报告厅</span></div>
-      <div class="info-item"><span class="info-label">主讲：</span><span class="info-value">沐甜老师</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">福田区图书馆 × 福田区总工会（福工学堂）</span></div>
+      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月29日 14:00-18:00</span></div>
+      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳前海人寿金融中心</span></div>
+      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">兴颂互动</span></div>
+      <div class="info-item"><span class="info-label">对象：</span><span class="info-value">教育机构经营者、内容与运营团队</span></div>
     </div>
-    <div class="event-desc"><strong>数字化阅读空间 × 福工学堂出品的免费 AI 内容创作课。</strong>聚焦小红书从0到1的AI辅助日更方法论，适合内容创作者、自媒体运营者</div>
-    <div class="event-action">
-      <span class="register-note">免费到馆参加：福田区图书馆负一楼报告厅，详情可关注「福田区图书馆」公众号</span>
-    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>如果你在寻找垂直行业切口，这场可用来了解教育机构从内容生产、运营到组织管理的具体 AI 改造需求。</div>
+    <div class="event-action"><a href="https://lianpu.com/event/9-yue-29-ri-jiao-yu-hang-ye-ai-hua-gai-zao-luo-di-gong-zuo-f" target="_blank" rel="noopener noreferrer" class="register-btn">查看详情与报名码</a></div>
   </div>
-  <!-- 同济智能机器人校友论坛 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">同济智能机器人校友论坛 · 深圳站（GEIA GBA 2026 同期）</div>
-      <div class="event-date">
-        <div class="day">10</div>
-        <div class="month">9月</div>
-        <div class="weekday">周四</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-robot">智能机器人</span>
-      <span class="tag tag-ai">具身智能</span>
-      <span class="tag tag-invest">校友论坛</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月10日（周四）14:00 - 17:30</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳福田大中华喜来登酒店六楼（与GEIA创新周同场馆）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳市同济大学校友会 × GEIA全球具身智能加速器 × 同济经管技术转移俱乐部</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">7场主题分享 + 圆桌对话，覆盖具身智能全链条</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 论坛看点</div>
-      <div class="speaker-item">• 人形机器人整机、大模型、灵巧手、核心零部件全产业链技术路线</div>
-      <div class="speaker-item">• 产学研投联动：同济校友创业项目展示 + 投资人与产业方对接</div>
-      <div class="speaker-item">• 与 GEIA 全球具身智能创新周同馆举办，可联动参观技术创新展</div>
-    </div>
-    <div class="event-desc"><strong>同济校友会联合GEIA全球具身智能加速器打造的智能机器人专题论坛。</strong>面向机器人创业者、产业链从业者、投资人及高校科研人员，聚焦具身智能从技术到商业化的完整闭环</div>
-    <div class="event-action">
-      <span class="register-note">免费，GEIA GBA 2026 同期活动；可关注「深圳市同济大学校友会」公众号或 GEIA 创新周报名通道</span>
-    </div>
+
+  <div class="section-title"><span class="badge badge-gz">广州</span>未来15天可参加活动</div>
+  <div class="event-card priority-low empty-state">
+    <strong>暂未发现日期、地点和报名信息均可可靠核验的广州 AI 线下活动。</strong>
+    <p>宁缺毋滥：本次未把已结束活动、纯线上活动、泛培训课或只有宣传但没有确定信息的活动放进列表。每日更新时会继续补充。</p>
   </div>
-  <!-- Arm Create -->
+
+  <div class="section-title"><span class="badge badge-hot">🔥 截止提醒</span>值得提前行动的机会</div>
   <div class="event-card priority-high">
     <div class="event-header">
-      <div class="event-title">⭐ Arm Create 深圳站 · 智能体AI开发者年度盛会</div>
-      <div class="event-date">
-        <div class="day">11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周五</div>
-      </div>
+      <div class="event-title">Anker 首届黑客松挑战赛｜9月27日报名与材料截止</div>
+      <div class="event-date"><div class="day">27</div><div class="month">9月</div><div class="weekday">截止</div></div>
     </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ Arm年度盛会</span>
-      <span class="tag tag-ai">智能体AI</span>
-      <span class="tag tag-chip">边缘AI</span>
-      <span class="tag tag-robot">物理AI</span>
-    </div>
+    <div class="event-tags"><span class="tag tag-hardware">AI Native硬件</span><span class="tag tag-agent">开发者</span><span class="tag tag-invest">18万+奖池</span><span class="tag tag-vip">真实业务命题</span></div>
     <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月11日（周五）10:00-18:00（9:00签到）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳湾万丽酒店3楼（南山区科技南路18号）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">Arm</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">预约审核制，名额有限</span></div>
+      <div class="info-item"><span class="info-label">报名：</span><span class="info-value">9月27日 23:59 截止预赛材料</span></div>
+      <div class="info-item"><span class="info-label">决赛：</span><span class="info-value">10月16-17日，深圳线下 24H 集中开发与路演</span></div>
+      <div class="info-item"><span class="info-label">赛道：</span><span class="info-value">智能录音、智能安防、充电储能、智能服务</span></div>
+      <div class="info-item"><span class="info-label">要求：</span><span class="info-value">年满18岁，建议2-4人组队，具备编程与AI工具使用能力</span></div>
     </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 议程亮点</div>
-      <div class="speaker-item">• 上午主旨演讲：Arm开发者关系副总裁Shantu Roy，聚焦智能体AI时代</div>
-      <div class="speaker-item">• 下午三大专场：边缘AI / 云AI / 物理AI，真实行业案例与实操演示</div>
-      <div class="speaker-item">• 腾讯、微软、阿里、网易、Ultralytics等生态伙伴齐聚</div>
-      <div class="speaker-item">• Arm100互动、T恤定制、可编程电子徽章、开发者派对</div>
-    </div>
-    <div class="event-desc"><strong>Arm在国内规模最大的年度开发者盛会！</strong>探索智能体AI如何在云端、边缘侧与终端设备持续演进，从"想"到"动"的物理AI系统工程落地</div>
-    <div class="event-action">
-      <a href="https://developer.arm.com/zh-cn/events/arm-create-shenzhen" target="_blank" class="register-btn" style="background:#e91e63;">🌐 官方注册</a>
-      <span class="register-note">免费，预约审核制，2-3周内通知结果</span>
-    </div>
+    <div class="event-desc"><strong>为什么值得去：</strong>安克开放真实产品命题，优秀作品有机会进入产品线或获得合作资源。比纯概念比赛更适合想验证“AI + 硬件/服务”商业化能力的团队。</div>
+    <div class="event-action"><a href="https://career.anker.com.cn/hackathon/" target="_blank" rel="noopener noreferrer" class="register-btn">查看官方赛事页</a><span class="register-note">最终线下活动超出本页15天窗口，因此仅作截止提醒</span></div>
   </div>
-  <!-- 数据知识产权 -->
-  <div class="event-card priority-low">
-    <div class="event-header">
-      <div class="event-title">深圳市重点产业数据知识产权研讨交流活动（含 AI 产业专题）</div>
-      <div class="event-date">
-        <div class="day">11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-data">数据知识产权</span>
-      <span class="tag tag-ai">AI产业</span>
-      <span class="tag tag-government">政府指导</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月11日（周五）14:00-17:40</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳知识产权保护中心3楼多功能厅（南山区前海桂湾四路深港基金小镇33栋3楼）</span></div>
-      <div class="info-item"><span class="info-label">指导：</span><span class="info-value">深圳市市场监督管理局</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳知识产权保护中心 × WIPO TISC × 深圳市标准技术研究院</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 议程亮点</div>
-      <div class="speaker-item">• 数据知识产权制度与登记运用（牛江波，深圳市标准技术研究院）</div>
-      <div class="speaker-item">• 医疗机构数据知识产权保护与应用实践（吴庆军，龙华区妇幼保健院）</div>
-      <div class="speaker-item">• 数据知识产权赋能生物医药产业创新发展（张超，北大香港科大医学中心）</div>
-      <div class="speaker-item">• 人工智能产业数据知识产权挑战与对策（张灿军，世纪恒程）</div>
-    </div>
-    <div class="event-desc"><strong>聚焦生物医药、人工智能重点产业数据知识产权保护需求。</strong>涵盖数据知识产权登记流程、合规流通、AI训练数据与模型参数的知识产权保护策略</div>
-    <div class="event-action">
-      <span class="register-note">免费，微信扫码报名（截止9/10 17:00）。联系人：王老师 0755-83255364</span>
-    </div>
-  </div>
-  <!-- OpenSchool -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">⭐ OpenSchool x 腾讯云 AI Claw Demo Day · 深圳站</div>
-      <div class="event-date">
-        <div class="day">12</div>
-        <div class="month">9月</div>
-        <div class="weekday">周六</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 腾讯云</span>
-      <span class="tag tag-ai">AI Demo Day</span>
-      <span class="tag tag-agent">智能体</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月12日（周六）14:00-18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳市南山区海天二路33号（腾讯滨海大厦）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">OpenSchool × 腾讯云</span></div>
-      <div class="info-item"><span class="info-label">协办：</span><span class="info-value">前海深港青年梦工场 × 深求社区（DeepSeek.club）</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 活动流程</div>
-      <div class="speaker-item">• 13:30-14:00 签到对接，自由破冰</div>
-      <div class="speaker-item">• 14:00-15:20 主办方及多名知名机构负责人主题演讲</div>
-      <div class="speaker-item">• 15:20-15:50 圆桌讨论一：出海主题</div>
-      <div class="speaker-item">• 15:50-16:20 圆桌讨论二：青年创业家主题</div>
-      <div class="speaker-item">• 16:20-17:30 6-10 个精选 AI Agent 项目现场 Demo 路演及评委/观众实时点评</div>
-      <div class="speaker-item">• 17:30-18:00 自由 Networking</div>
-    </div>
-    <div class="event-desc"><strong>腾讯滨海大厦 AI Demo Day，聚焦 AI Agent 真实落地。</strong>前半场听前沿趋势与落地实践，后半场围观精选项目 Demo 路演，与知名 VC、生态方和产业代表面对面</div>
-    <div class="event-action">
-      <a href="https://www.huodongxing.com/event/5876618742300" target="_blank" class="register-btn" style="background:#e91e63;">🌐 活动行报名</a>
-      <span class="register-note">免费，面向 AI 创业团队、投资人、开发者、大厂产业负责人</span>
-    </div>
-  </div>
-  <!-- YOLO Vision -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">🆕 ⭐ Ultralytics YOLO Vision 2026 — 视觉 AI 年度技术大会（深圳站）</div>
-      <div class="event-date">
-        <div class="day">13</div>
-        <div class="month">9月</div>
-        <div class="weekday">周日</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-new">🆕 新增</span>
-      <span class="tag tag-vip">⭐ 视觉AI</span>
-      <span class="tag tag-vision">YOLO</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月13日（周日）10:00-18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳市南山区科苑南路2516号 深圳湾文化广场</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">Ultralytics</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">英文主讲，现场提供翻译支持；同步线上直播</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 大会亮点</div>
-      <div class="speaker-item">• 新一代 Ultralytics YOLO 重磅亮相</div>
-      <div class="speaker-item">• AMD、Intel、高通、Arm 等全球科技企业现场分享</div>
-      <div class="speaker-item">• 前沿 AI 软硬件技术与重磅产品分享 + 真实场景应用 Demo</div>
-      <div class="speaker-item">• 从模型到硬件、从开发到生产部署的实战经验</div>
-      <div class="speaker-item">• 与全球 AI 专家、开发者及开源社区现场交流</div>
-    </div>
-    <div class="event-desc"><strong>Ultralytics YOLO Vision 第二次落地深圳！</strong>聚焦计算机视觉前沿技术、规模化部署与真实应用落地，连接全球开源社区与产业实践</div>
-    <div class="event-action">
-      <a href="https://www.ultralytics.com/zh/events/yolovision" target="_blank" class="register-btn" style="background:#e91e63;">🌐 官方报名</a>
-      <span class="register-note">免费；前50位通过极市平台渠道报名用户可使用优惠码 EV50 领取线下门票（企业邮箱，需审核）</span>
-    </div>
-  </div>
-  <!-- PyCon China深圳站 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">🆕 PyCon China 2026 深圳站（AI for Good）</div>
-      <div class="event-date">
-        <div class="day">13</div>
-        <div class="month">9月</div>
-        <div class="weekday">周日</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-new">🆕 新增</span>
-      <span class="tag tag-python">Python</span>
-      <span class="tag tag-ai">AI开发者</span>
-      <span class="tag tag-paid">¥0-199</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月13日（周日）13:00-18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">南山区粤海街道华润城万象天地北京银行总部10楼创客中心</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">PyChina（Python 中国社区）</span></div>
-      <div class="info-item"><span class="info-label">主题：</span><span class="info-value">AI for Good</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 分享方向</div>
-      <div class="speaker-item">• AI、智能体、大模型、物理 AI、具身智能</div>
-      <div class="speaker-item">• 数据科学、Web 开发、云原生、自动化、开源生态</div>
-      <div class="speaker-item">• 由 Python 与 AI 驱动的技术实践与开发者生态</div>
-    </div>
-    <div class="event-desc"><strong>PyCon China 2026 深圳站，聚焦 AI 时代 Python 开发者的无限可能。</strong>面向 Python、AI 领域开发者与技术专家，搭建开放包容的技术交流平台</div>
-    <div class="event-action">
-      <a href="https://mogegallery.huodongxing.com/event/9874026156911" target="_blank" class="register-btn" style="background:#e91e63;">🌐 活动行报名</a>
-      <span class="register-note">¥0-199；具体票档以活动行页面为准</span>
-    </div>
-  </div>
-  <!-- 福田图书馆职场AI -->
-  <div class="event-card priority-low">
-    <div class="event-header">
-      <div class="event-title">「数智+N」AI 系列课 · 上班学 AI，下班蓄能力 — 解锁 5 个未来新可能（福田区图书馆）</div>
-      <div class="event-date">
-        <div class="day">12</div>
-        <div class="month">9月</div>
-        <div class="weekday">周六</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-education">公益免费</span>
-      <span class="tag tag-ai">职场提效</span>
-      <span class="tag tag-agent">WorkBuddy</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月12日（周六）15:00-17:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">福田区图书馆负一楼报告厅</span></div>
-      <div class="info-item"><span class="info-label">主讲：</span><span class="info-value">醒狮老师</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">福田区图书馆 × 福田区总工会（福工学堂）</span></div>
-    </div>
-    <div class="event-desc"><strong>数字化阅读空间 × 福工学堂出品的免费 AI 提升课堂。</strong>聚焦职场 AI 提效，适合上班族与职场人士</div>
-    <div class="event-action">
-      <span class="register-note">免费到馆参加：福田区图书馆负一楼报告厅</span>
-    </div>
-  </div>
-  <!-- 福田图书馆视频工坊 -->
-  <div class="event-card priority-low">
-    <div class="event-header">
-      <div class="event-title">「数智+N」AI 系列课 · AI 视频工坊：创意无边界（福田区图书馆）</div>
-      <div class="event-date">
-        <div class="day">13</div>
-        <div class="month">9月</div>
-        <div class="weekday">周日</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-education">公益免费</span>
-      <span class="tag tag-video">AI视频</span>
-      <span class="tag tag-ai">内容创作</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月13日（周日）14:30-16:30</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">福田区图书馆负一楼报告厅</span></div>
-      <div class="info-item"><span class="info-label">主讲：</span><span class="info-value">钟政老师</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">福田区图书馆 × 福田区总工会（福工学堂）</span></div>
-    </div>
-    <div class="event-desc"><strong>数字化阅读空间 × 福工学堂出品的免费 AI 视频创作课。</strong>聚焦 AI 视频工具与创意表达，适合内容创作者与视频爱好者</div>
-    <div class="event-action">
-      <span class="register-note">免费到馆参加：福田区图书馆负一楼报告厅</span>
-    </div>
-  </div>
-  <!-- ============ 广州 ============ -->
-  <div class="section-title">
-    <span class="badge badge-gz">广州</span>
-    未来7天可参加活动
-  </div>
-  <!-- Amplify -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">AI 重塑传播：Amplify 分享会 · 广州场（美通社）</div>
-      <div class="event-date">
-        <div class="day">9</div>
-        <div class="month">9月</div>
-        <div class="weekday">周三</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-ai">AI传播</span>
-      <span class="tag tag-business">品牌叙事</span>
-      <span class="tag tag-overseas">美通社</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月9日（周三）14:00 - 16:30</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州卓美亚酒店 7 楼塔景厅（天河区珠江东路12号）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">美通社（PR Newswire）</span></div>
-      <div class="info-item"><span class="info-label">对象：</span><span class="info-value">公关传播、品牌营销、企业传播负责人</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 议程亮点</div>
-      <div class="speaker-item">• 前瞻洞察：AI 时代的可信叙事——最大化品牌影响力的多渠道策略</div>
-      <div class="speaker-item">• 精彩亮相：美通社 Amplify 智能传播平台 Demo 演示</div>
-      <div class="speaker-item">• 案例分享 & 行业交流：探讨品牌如何在 AI 时代构建可信叙事</div>
-    </div>
-    <div class="event-desc"><strong>美通社 Amplify™ 智能传播平台亚太首发后首场广州分享会。</strong>聚焦 AI 驱动的多渠道整合传播，帮助公关传播人在一个平台完成内容规划、创作、发布与报告分析闭环</div>
-    <div class="event-action">
-      <a href="https://bj.huodongxing.com/event/8875459140900" target="_blank" class="register-btn" style="background:#e91e63;">🌐 活动行报名</a>
-      <span class="register-note">免费，需提前报名</span>
-    </div>
-  </div>
-  <!-- 探迹渠道合伙人 -->
-  <div class="event-card priority-low">
-    <div class="event-header">
-      <div class="event-title">探迹 AI 拓客智能体 · 全国渠道合伙人招募（广州海珠）</div>
-      <div class="event-date">
-        <div class="day">10</div>
-        <div class="month">9月</div>
-        <div class="weekday">周四</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-agent">AI拓客Agent</span>
-      <span class="tag tag-business">渠道合作</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月10日（周四）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州海珠区新港东路1128号智通广场C塔18楼（喜马拉雅）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">广州探迹科技有限公司</span></div>
-    </div>
-    <div class="event-desc"><strong>探迹科技AI拓客Agent全国渠道合伙人招募会。</strong>面向B2B销售服务商和企业管理者，展示AI Agent智能拓客能力并开放渠道合作</div>
-    <div class="event-action">
-      <span class="register-note">免费；活动行搜索"探迹渠道"报名</span>
-    </div>
-  </div>
-  <!-- 智慧商业信息化行业大会 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">第十八届智慧商业信息化行业大会（AI+零售餐饮数字化）</div>
-      <div class="event-date">
-        <div class="day">10-11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周四-五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-ai">AI+零售</span>
-      <span class="tag tag-business">餐饮数字化</span>
-      <span class="tag tag-paid">¥0-598</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月10日-11日（周四-周五）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州祈福会展中心 B 三楼（番禺区）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">中国零售CIO俱乐部 · 智慧零售与餐饮联盟</span></div>
-      <div class="info-item"><span class="info-label">对象：</span><span class="info-value">零售/餐饮/商超/便利连锁企业 CIO、数字化负责人、技术服务商</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 大会亮点</div>
-      <div class="speaker-item">• 50+ 零售餐饮数字化实战案例：AI 选品、智能订货、智能客服、会员运营</div>
-      <div class="speaker-item">• 智慧门店、全渠道中台、数据资产化、AI 营销闭环解决方案展览</div>
-      <div class="speaker-item">• 行业专业人士可申请免费听会票，深度参会可选付费套票</div>
-    </div>
-    <div class="event-desc"><strong>华南地区零售与餐饮行业年度数字化风向标大会。</strong>聚焦 AI 赋能线下商业全链路，适合实体零售、连锁餐饮、SaaS 服务商与渠道商参会对接</div>
-    <div class="event-action">
-      <span class="register-note">¥0-598，行业专业人士可申请免费票；关注「智慧零售与餐饮」公众号或活动行搜索"智慧商业信息化"报名</span>
-    </div>
-  </div>
-  <!-- 华南智能交通大会 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">第十届华南智能交通大会（AI+交通新质生产力）</div>
-      <div class="event-date">
-        <div class="day">10-11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周四-五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-ai">AI+交通</span>
-      <span class="tag tag-government">新质生产力</span>
-      <span class="tag tag-free">免费预登记</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月10日-11日（周四-周五）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州（具体场馆以官方通知为准）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">广东省智能交通协会 · 赛文交通网</span></div>
-      <div class="info-item"><span class="info-label">主题：</span><span class="info-value">AI 赋能交通基础设施数字化、智能网联、车路协同</span></div>
-    </div>
-    <div class="event-desc"><strong>华南智能交通领域十周年品牌盛会。</strong>覆盖智慧公路、城市交通治理、智能网联汽车、AI 信号控制、低空经济等方向，适合交通行业政企客户与技术方案商</div>
-    <div class="event-action">
-      <span class="register-note">免费预登记参会；关注「华南智能交通大会」官方公众号获取报名入口</span>
-    </div>
-  </div>
-  <!-- 中国东盟AI制造 -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">⭐ 2026 中国—东盟人工智能+制造合作交流会议（广州市工信局指导）</div>
-      <div class="event-date">
-        <div class="day">11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 政府指导</span>
-      <span class="tag tag-ai">AI+制造</span>
-      <span class="tag tag-overseas">中国-东盟</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月11日（周五）14:00-18:00（13:30签到）</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州市天河区小鹏科技园 T3 报告厅</span></div>
-      <div class="info-item"><span class="info-label">指导：</span><span class="info-value">广州市工业和信息化局</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">国家工业信息安全发展研究中心 × 赛昇数字经济研究院（广州）</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 会议议程</div>
-      <div class="speaker-item">• 领导致辞 → 联合倡议（共建数字生态）→ 签约仪式</div>
-      <div class="speaker-item">• 专家观点：数据流通安全治理中的制度与技术问题</div>
-      <div class="speaker-item">• 东盟视角：外宾分享 → 政策宣贯 → 成果发布</div>
-      <div class="speaker-item">• 链主出海：链主企业分享出海经验 → 圆桌对话：AI赋能制造业的国际合作</div>
-    </div>
-    <div class="event-desc"><strong>搭建中国与东盟国家在人工智能与制造领域的高层次交流合作平台！</strong>聚焦数据流通安全治理、跨境合作签约及产业协同对话，无入场费、报名费及任何附加费用</div>
-    <div class="event-action">
-      <span class="register-note">免费，微信扫描邀请函二维码报名（截止9/10）。联系人：钟玲/彭志根 020-83123995, 18666213424</span>
-    </div>
-  </div>
-  <!-- 金蝶AI星辰峰会 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">2026 金蝶 AI 星辰峰会 · 广州站（企业数智化 · Lingee 1.0）</div>
-      <div class="event-date">
-        <div class="day">11</div>
-        <div class="month">9月</div>
-        <div class="weekday">周五</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-ai">企业AI</span>
-      <span class="tag tag-saas">数智化</span>
-      <span class="tag tag-business">365行落地</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月11日（周五）13:00-17:30</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州四季酒店 5楼玛瑙厅（天河区珠江新城 IFC国金中心，地铁3/5号线珠江新城站D1出口）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">洲天科技 × 金蝶</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">覆盖3650+企业数智化经验，Lingee 1.0以AGI准基点实现场景快速落地</span></div>
-    </div>
-    <div class="event-desc"><strong>在杭州AI生态中心成功召开基础上，广州落地这一站。</strong>聚焦从0到1的企业AI落地认知革命，走进365行、覆盖3650+企业数智化成功经验</div>
-    <div class="event-action">
-      <span class="register-note">免费，峰会提供停车位；活动行或互动吧搜索"金蝶AI星辰峰会"报名</span>
-    </div>
-  </div>
-  <!-- 国际低空经济贸易博览会 -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">⭐ 第三届国际低空经济贸易博览会暨第九届全球无人系统大会（广州广交会D区）</div>
-      <div class="event-date">
-        <div class="day">11-13</div>
-        <div class="month">9月</div>
-        <div class="weekday">周五-日</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 国际级展会</span>
-      <span class="tag tag-lowalt">低空经济</span>
-      <span class="tag tag-ai">AI应用</span>
-      <span class="tag tag-free">免费预登记</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月11日-13日 09:00-17:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州广交会展馆 D 区</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">80000+㎡，1000+企业，50000+专业观众，50+国家和地区</span></div>
-      <div class="info-item"><span class="info-label">主题：</span><span class="info-value">深化生态合作·携手低空未来 / 创新低空·服贸全球</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 展会亮点</div>
-      <div class="speaker-item">• eVTOL载人飞行器、无人机、创新通航、低空智联、雷达反制、通讯导航全产业链</div>
-      <div class="speaker-item">• 载荷及AI应用展区：低空经济+AI深度融合场景</div>
-      <div class="speaker-item">• 30+场产业供需对接、创投对接、专场推介、商务洽谈</div>
-      <div class="speaker-item">• 全国首个低空经济出海基地成果落地，面向一带一路/RCEP海外市场</div>
-    </div>
-    <div class="event-desc"><strong>全球极具规模及影响力的低空经济产业综合性展会！</strong>系统呈现低空经济"制造端、应用端、服务端"三端协同的产业链全景，AI应用为关键支撑要素</div>
-    <div class="event-action">
-      <span class="register-note">免费预登记入场；关注「国际低空经济贸易博览会」官方公众号获取报名入口</span>
-    </div>
-  </div>
-  <!-- 腾讯云架构师城市沙龙 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">「AI在企业落地的问题与解法」腾讯云架构师城市沙龙 · 广州</div>
-      <div class="event-date">
-        <div class="day">12</div>
-        <div class="month">9月</div>
-        <div class="weekday">周六</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-cloud">腾讯云</span>
-      <span class="tag tag-ai">AI Coding</span>
-      <span class="tag tag-agent">企业AI落地</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月12日（周六）14:00-18:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">腾讯广州大厦512会议室（海珠区琶洲街道芳园路99号）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">腾讯云架构师技术同盟</span></div>
-      <div class="info-item"><span class="info-label">形式：</span><span class="info-value">主题分享 + 分组讨论 + 小组代表发言</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 议程亮点</div>
-      <div class="speaker-item">• 张晓辉（腾讯云架构师广州同盟理事）：《你欠的债，AI 会加倍讨回来 — AI Coding 进入企业研发体系后的三处断点》</div>
-      <div class="speaker-item">• 沈淦（正马软件CTO）：《不被AI取代的工程师 — 重新计算软件价值》</div>
-      <div class="speaker-item">• 分组讨论1：企业Coding Agent规范、AI上生产风险防范、junior成长</div>
-      <div class="speaker-item">• 分组讨论2：AI token投入产出比、AI落地核心业务经验、500万AI预算怎么花</div>
-    </div>
-    <div class="event-desc"><strong>腾讯云架构师技术同盟出品的城市沙龙，聚焦AI在企业研发体系落地的真实问题。</strong>不讲OA/BI/内容创作，只讨论AI Coding进入生产后的断点与解法</div>
-    <div class="event-action">
-      <a href="https://cloud.tencent.com/developer/salon/salon-2514" target="_blank" class="register-btn" style="background:#e91e63;">🌐 腾讯云报名</a>
-      <span class="register-note">免费，面向技术管理者与架构师</span>
-    </div>
-  </div>
-  <!-- 超级时代琶洲之约 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">超级时代·琶洲之约 — 人工智能×OPC创新发展沙龙（琶洲算法大赛专场）</div>
-      <div class="event-date">
-        <div class="day">12</div>
-        <div class="month">9月</div>
-        <div class="weekday">周六</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-agent">OPC一人公司</span>
-      <span class="tag tag-robot">具身智能</span>
-      <span class="tag tag-government">政策红利</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月12日（周六）10:00-12:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州海珠区琶洲大道68号华新中心18层琶洲模方</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">盘古智库（深圳）信息咨询有限公司</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">限50-80人，免费（需审核）</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 沙龙亮点</div>
-      <div class="speaker-item">• 具身智能生态赛怎么打？深度解读具身机器人场景应用大赛四大赛道规则与评审标准</div>
-      <div class="speaker-item">• OPC政策红利怎么吃？全方位拆解算力券、数据券、流量券等核心扶持政策</div>
-      <div class="speaker-item">• 哪里是极佳落地点？深度解析琶洲人工智能与数字经济试验区产业生态</div>
-      <div class="speaker-item">• 第五届琶洲算法大赛：8531支全球队伍、百万元奖金池、80余国覆盖</div>
-    </div>
-    <div class="event-desc"><strong>海珠区全国首创人工智能OPC（一人公司）创新发展模式！</strong>以Smart（超级智能）、Solution（解决方案）、Save（降本增效）、Scene（应用场景）4S为核心，推出十大维度全链条扶持政策</div>
-    <div class="event-action">
-      <span class="register-note">免费，需审核；活动行搜索"超级时代 琶洲之约"扫码报名</span>
-    </div>
-  </div>
-  <!-- ============ 热门预告 ============ -->
-  <div class="section-title">
-    <span class="badge badge-hot">🔥 热门预告</span>
-    9月13日之后值得关注的大型活动
-  </div>
-  <!-- 岭南科技创新论坛 -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">【深圳】2026 岭南科技创新论坛暨"科创中国"广东行合作成果交流会</div>
-      <div class="event-date">
-        <div class="day">15-16</div>
-        <div class="month">9月</div>
-        <div class="weekday">周一-二</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-new">🆕 新增</span>
-      <span class="tag tag-vip">⭐ 广东省科协</span>
-      <span class="tag tag-ai">AI赋能千行百业</span>
-      <span class="tag tag-government">政府主办</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月15日全天（14日下午报到）+ 9月16日主论坛第二环节</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳国际会展中心皇冠假日酒店会展湾宴会厅</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">广东省科学技术协会</span></div>
-      <div class="info-item"><span class="info-label">主题：</span><span class="info-value">围绕人工智能赋能千行百业组织高质量学术交流</span></div>
-    </div>
-    <div class="event-desc"><strong>广东省科协主办，围绕AI赋能千行百业组织高质量学术交流。</strong>9/15为"科创中国"广东行合作成果交流会，9/16上午为未来空中交通发展大会</div>
-    <div class="event-action">
-      <span class="register-note">报名截止9/6；通过南粤科创平台(https://www.nanyuest.cn)报送参会名单。联系人：冯娟 020-83547584</span>
-    </div>
-  </div>
-  <!-- AI赋能新能源高峰论坛 -->
-  <div class="event-card priority-medium">
-    <div class="event-header">
-      <div class="event-title">【深圳】AI 赋能新能源高峰论坛（深圳会展中心福田 · 免费）</div>
-      <div class="event-date">
-        <div class="day">16</div>
-        <div class="month">9月</div>
-        <div class="weekday">周二</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-new">🆕 新增</span>
-      <span class="tag tag-ai">AI+能源</span>
-      <span class="tag tag-hardware">新型电力系统</span>
-      <span class="tag tag-free">免费</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月16日（周二）上午 09:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">深圳会展中心（福田）1号馆会议活动区</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">深圳市电力服务商会</span></div>
-      <div class="info-item"><span class="info-label">规模：</span><span class="info-value">200+人</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎯 论坛方向</div>
-      <div class="speaker-item">• AI赋能新型电力系统、AI+新能源材料研发、人形机器人能源系统</div>
-      <div class="speaker-item">• 新能源+智算中心(AIDC)、低空经济三大方向增长潜力</div>
-      <div class="speaker-item">• 光伏、风电、储能、新能源汽车、氢能等细分赛道AI应用</div>
-    </div>
-    <div class="event-desc"><strong>"算力+电力"双轮驱动进入新阶段！</strong>汇聚AI与新能源领域顶尖专家、产业领袖与政策制定者，共探AI赋能零碳未来</div>
-    <div class="event-action">
-      <a href="https://party.hudongba.com/party/u1f57.html" target="_blank" class="register-btn" style="background:#e91e63;">🌐 互动吧报名</a>
-      <span class="register-note">免费，200+人规模</span>
-    </div>
-  </div>
-  <!-- 凤凰湾区 -->
-  <div class="event-card priority-high">
-    <div class="event-header">
-      <div class="event-title">【广州】凤凰湾区财经论坛 2026 · 新智能 新开放</div>
-      <div class="event-date">
-        <div class="day">16</div>
-        <div class="month">9月</div>
-        <div class="weekday">周二</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-vip">⭐ 凤凰卫视主办</span>
-      <span class="tag tag-ai">AI经济</span>
-      <span class="tag tag-business">企业全球化</span>
-      <span class="tag tag-overseas">跨境资本</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月16日（周二）全天</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">广州（具体地址待公布）</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">凤凰卫视 × 凤凰网（中国上市公司协会指导支持）</span></div>
-    </div>
-    <div class="speakers">
-      <div class="speakers-title">🎤 重磅嘉宾</div>
-      <div class="speaker-item">• 江小涓（国家数据专家咨询委员会主任、国务院原副秘书长）开幕演讲</div>
-      <div class="speaker-item">• 薛其坤（国家最高科学技术奖获得者、南方科技大学校长）开幕演讲</div>
-      <div class="speaker-item">• 圆桌：AI需要跑多快才能追得上估值？</div>
-      <div class="speaker-item">• 圆桌：AI投资——大牛市能持续多久（刘纪鹏 × 林园）</div>
-      <div class="speaker-item">• "新质生产力的星辰大海"主题演讲 + 2026凤凰之星上市公司评选揭晓</div>
-    </div>
-    <div class="event-desc"><strong>聚焦人工智能、企业全球化、跨境资产管理、新质生产力与资本市场投资。</strong>从产品出海到生态出海，解码上市公司全球化新路径</div>
-    <div class="event-action">
-      <span class="register-note">报名方式待公布，关注「凤凰网」获取最新信息</span>
-    </div>
-  </div>
-  <!-- 福田图书馆后续 -->
-  <div class="event-card priority-low">
-    <div class="event-header">
-      <div class="event-title">「数智+N」AI 系列课 · AI 直播带货实战：零基础也能玩转直播间（福田区图书馆）</div>
-      <div class="event-date">
-        <div class="day">16</div>
-        <div class="month">9月</div>
-        <div class="weekday">周二</div>
-      </div>
-    </div>
-    <div class="event-tags">
-      <span class="tag tag-education">公益免费</span>
-      <span class="tag tag-video">AI直播</span>
-      <span class="tag tag-ecom">电商带货</span>
-    </div>
-    <div class="event-info">
-      <div class="info-item"><span class="info-label">时间：</span><span class="info-value">9月16日（周二）19:00-21:00</span></div>
-      <div class="info-item"><span class="info-label">地点：</span><span class="info-value">福田区图书馆负一楼报告厅</span></div>
-      <div class="info-item"><span class="info-label">主讲：</span><span class="info-value">沐甜老师</span></div>
-      <div class="info-item"><span class="info-label">主办：</span><span class="info-value">福田区图书馆 × 福田区总工会（福工学堂）</span></div>
-    </div>
-    <div class="event-desc"><strong>数字化阅读空间 × 福工学堂出品的免费 AI 直播带货课。</strong>零基础也能玩转直播间，适合电商从业者与内容创作者</div>
-    <div class="event-action">
-      <span class="register-note">免费到馆参加：福田区图书馆负一楼报告厅</span>
-    </div>
-  </div>
-  <!-- ============ 报名指南 ============ -->
+
   <div class="tips-box">
-    <h3>📋 报名与参会实用指南</h3>
+    <h3>📋 给深圳 OPC AI 创业者的选择建议</h3>
     <ul class="tips-list">
-      <li><strong>本周（9月7日-9月13日）活动总数：</strong>深圳 21 场 + 广州 9 场 = 30 场主列表活动，另含 4 个热门预告。较上期移除已过期 9/6 单日活动 6 场（深圳：W3C Web AI、中山大学星耀鹏城、福田图书馆AI外语；广州：XAIR Expo、OPC咖啡搭子AI主理人专场）及 IEAE/CIIS/AIx 等多日展会尾声，新增 4 场（深圳：全球AI眼镜峰会、YOLO Vision、PyCon China深圳站、福田图书馆9/12-13课程）。</li>
-      <li><strong>今日（9月7日，周一）深圳 2 场：</strong>① <strong>2026 全球AI眼镜产业供应链峰会</strong>（宝安鹏鼎时代大厦27楼，14:00-18:00，免费，15+款真机上手）② <strong>IFOC 2026 第24届讯石光通信大会</strong>（国际会展中心洲际酒店，首日08:30，Nvidia/华为/三大运营商齐聚，¥1000起）。</li>
-      <li><strong>9月8日（周二）深圳 2 场重磅：</strong>① <strong>走进腾讯滨海大厦 · AI 时代软件工程创新实践</strong>（深软协第16期，WorkBuddy & CodeBuddy 实战，免费）② <strong>GEIA 具身智能创新周</strong>开赛（黑客松 48 小时在大中华喜来登酒店开跑）。</li>
-      <li><strong>9月8-11日 GEIA 具身智能创新周</strong>（深圳大中华喜来登酒店）：9/8 黑客松开赛 → 9/9 开幕+主论坛+元启奖颁奖盛典+人形机器人T台秀 → 9/10 12场平行论坛+同济智能机器人校友论坛（14:00，六楼）+黑客松冲刺。1500+行业嘉宾、60+展商、200+高校选手。</li>
-      <li><strong>9月9日（周三）深圳 9 场同日密度极高：</strong>① CIOE+elexcon+IICIE 三展联动（国际会展中心宝安新馆）② SIVA 2026 VR/AR博览会（2号馆，13款真机拆解+62款新品上手）③ 首届企业家个人超级智能与OPC生态大会（南山凯宾斯基，1000人）④ AI智能体·组织重塑先锋实践大会（实在智能8周年，龙岗坂田）⑤ AI安防与视觉技术论坛（CIOE同期）⑥ 智能家居发展趋势高峰论坛（CIOE同期）⑦ 第三届AI赋能消费电子创新论坛（14号馆）⑧ 具身智能产业大会（15号馆）⑨ 福田图书馆小红书日更课（19:00，免费）。广州——Amplify分享会（美通社，14:00，卓美亚酒店）。</li>
-      <li><strong>⚠️ CIOE三展预登记已截止（9月8日）！</strong>无现场售票，必须提前线上实名预登记。一张门票三展通用+SIVA，32万㎡、5000+展商、24万+观众，华南年度最大三展联动。人证合一，仅限本人使用。</li>
-      <li><strong>9月10日（周四）广州活动密度提升：</strong>深圳——CIOE三展第二天 + GEIA创新周第三天 + 同济智能机器人校友论坛（14:00，大中华喜来登六楼）+ IICIE同期硅光产业峰会+硬核芯生态大会（14号馆）。广州——① 探迹AI拓客智能体全国渠道合伙人招募（海珠区，免费）② 第十八届智慧商业信息化行业大会（祈福会展中心，AI+零售餐饮数字化）③ 第十届华南智能交通大会（AI+交通新质生产力）。</li>
-      <li><strong>9月11日（周五）深圳 2 场 + 广州 3 场：</strong>深圳——① CIOE三展最后一天（末日至14:30）② Arm Create 深圳站（深圳湾万丽酒店，Arm国内最大年度开发者盛会，免费审核制）。广州——① 2026中国—东盟人工智能+制造合作交流会议（天河区小鹏科技园，14:00，免费）② 金蝶AI星辰峰会·广州站（四季酒店，13:00，免费）③ 第三届国际低空经济贸易博览会（广交会D区，9/11-13开幕，80000+㎡）。</li>
-      <li><strong>9月12日（周六）深圳 2 场 + 广州 2 场：</strong>深圳——① OpenSchool×腾讯云 AI Claw Demo Day（腾讯滨海大厦，14:00，AI Agent路演）② 福田图书馆「数智+N」职场AI课（15:00-17:00，免费）。广州——① 腾讯云架构师城市沙龙·广州（腾讯广州大厦，14:00，AI Coding企业落地）② 超级时代·琶洲之约 AI×OPC创新发展沙龙（海珠区琶洲，10:00，免费审核制）。</li>
-      <li><strong>9月13日（周日）深圳 2 场新增：</strong>① <strong>Ultralytics YOLO Vision 2026</strong>（深圳湾文化广场，10:00-18:00，视觉AI年度大会，高通/Intel/AMD/Arm嘉宾，英文+翻译）② <strong>PyCon China 2026 深圳站</strong>（华润城万象天地北京银行总部10楼创客中心，13:00-18:00，AI for Good主题）③ 福田图书馆 AI 视频工坊（14:30-16:30，免费）。</li>
-      <li><strong>内容创作者重点关注：</strong>福田区图书馆「数智+N」系列本周 3 场全免费：9/9 小红书日更、9/12 职场AI、9/13 AI视频工坊，9/16 还有 AI 直播带货。</li>
-      <li><strong>具身智能/机器人赛道本周持续覆盖：</strong>深圳 GEIA 创新周（9/8-11）+ CIOE 同期具身智能产业大会（9/9）+ 同济智能机器人校友论坛（9/10）+ 广州琶洲之约AI×OPC沙龙（9/12，具身智能生态赛解读）+ 广州国际低空经济贸易博览会（9/11-13，含具身智能与移动机器人展）。多场覆盖整机/大模型/灵巧手/核心零部件全产业链。</li>
-      <li><strong>🆕 本期新增亮点：</strong>① 全球AI眼镜产业供应链峰会（9/7 深圳宝安，15+款真机上手）② Ultralytics YOLO Vision 2026（9/13 深圳湾文化广场，视觉AI年度大会）③ PyCon China 2026 深圳站（9/13，Python+AI开发者大会）④ 福田图书馆9/12-13职场AI+视频工坊（免费）。</li>
-      <li><strong>9月13日之后热门预告：</strong>① 岭南科技创新论坛暨"科创中国"广东行（9/15-16 深圳国际会展中心皇冠假日酒店，广东省科协主办）② AI赋能新能源高峰论坛（9/16 深圳会展中心福田，免费）③ 凤凰湾区财经论坛2026（9/16 广州，江小涓/薛其坤开幕演讲）④ 福田图书馆「数智+N」9/16 AI直播带货（免费）。</li>
-      <li><strong>活动行（huodongxing.com）</strong>是大部分活动的统一报名入口 — 打开链接 → 点击「立即报名」 → 填写信息 → 获取电子票二维码，到场扫码签到即可。</li>
-      <li><strong>免费票/审核制活动</strong>建议至少提前 2-3 天报名，越早提交通过率越高；CIOE 三展预登记已截止，未登记者请改约下期。</li>
-      <li><strong>深圳→广州</strong>高铁约 30 分钟，广州南站到广交会展馆地铁约 40 分钟，当天往返完全可行。本周建议广深往返：9/11（周五）深圳 Arm Create + 广州 低空经济博览会/金蝶峰会/中国-东盟AI制造会议；或 9/12（周六）深圳 OpenSchool×腾讯云 + 广州 腾讯云架构师沙龙/琶洲之约。</li>
-      <li>建议在活动行 App 上关注「<strong>深圳</strong>」城市 + 「<strong>广州</strong>」城市 + 「<strong>AI</strong>」标签，新活动会推送通知，不错过后续机会。</li>
-      <li>活动现场通常有<strong>自由交流环节</strong>，建议带名片或准备好电子名片，这是拓展人脉的核心价值。本周 GEIA 创新周、SIVA VR/AR博览会与同济智能机器人论坛尤其适合对接产业链上下游资源。</li>
+      <li><strong>只选一场：</strong>优先参加 9月27日「AI商业应用沙龙」，主题与你当前的 OPC 获客、Agent 交付和品牌出海最直接相关。</li>
+      <li><strong>正在找政策与企业客户：</strong>优先参加 9月24日龙华区“AI+软件”座谈会，提前准备一句话产品介绍、目标行业、已有案例与希望对接的资源。</li>
+      <li><strong>已经有产品或 Demo：</strong>选择 9月26日科创榜路演；现场重点验证客户价值、商业模式和融资叙事，不要只讲技术能力。</li>
+      <li><strong>主攻出海获客：</strong>9月26日 TikTok 沙龙更偏内容与流量，9月29日外贸增长工作坊更偏 B2B 获客与工作流，可按客户类型二选一。</li>
+      <li><strong>核验说明：</strong>WAIE 2026 智能体 AI 产业应用大会公开页面只确认了 9月24日与深圳，未可靠披露具体时间、会场和报名状态，因此暂不计入主列表。</li>
+      <li><strong>国庆假期：</strong>目前未发现 10月1日-7日适合成年 AI 创业者且信息可靠的广深线下活动，后续如有新增会在每日更新中补入。</li>
     </ul>
   </div>
 
   <div class="footer">
-    <p>数据来源：活动行（huodongxing.com）、Ultralytics、PyChina、华强电子网、CIOE 中国光博会、elexcon、IICIE、博闻创意会展、SIVA、深圳市增强现实技术应用协会、追焦XR、Wellsenn XR、Rebuild-Z、GEIA、元宇宙与人工智能三十人论坛、坚持企业家俱乐部、RWA研究院、实在智能、深圳市智慧安防商会、千家智客、广东省人工智能产业协会、工业和信息化部、中博会、INNOAI、ME Group、i深港孵化器、华润前海中心、中山大学深圳研究院、深圳市知识产权保护中心、广州市工业和信息化局、国家工业信息安全发展研究中心、南山区委宣传部、邻悦·湾区AI圈、凤凰卫视/凤凰网、深圳市同济大学校友会、广东省智能交通协会、赛文交通网、中国零售CIO俱乐部、智慧零售与餐饮联盟、金蝶/洲天科技、国际低空经济贸易博览会组委会、腾讯云架构师技术同盟、盘古智库、美通社、Arm、W3C、CCF、CAAI、CIIS官网、福田区图书馆、福工学堂、IFOC/讯石光通信、深圳市电子学会、深圳市软件行业协会、腾讯、PMI中国、广东省科学技术协会 等公开渠道</p>
-    <p>活动信息可能随时变动，报名前请以活动行页面最新信息为准 | 更新时间：2026年9月7日</p>
+    <p>数据来源：深圳市软件行业协会、深圳市计算机学会、Anker 官方赛事页、联谱活动页、CAIP AI 活动页等公开渠道。</p>
+    <p>活动时间、地点、票价和报名状态可能随时变化；出发前请再次查看主办方最新通知。更新时间：2026年9月23日 21:23（Asia/Shanghai）</p>
   </div>
-
 </div>
 </body>
 </html>
