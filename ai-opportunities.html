@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="最近30天新发布、仍可报名的AI竞赛、模型评测、黑客松与创业扶持机会，面向深圳AI创业者与OPC。">
+  <title>AI 竞赛与创业机会雷达｜深圳 OPC</title>
+  <style>
+    :root {
+      --ink: #172033;
+      --muted: #657087;
+      --line: #e6eaf2;
+      --blue: #4f63e9;
+      --purple: #7d48c9;
+      --green: #168565;
+      --orange: #d66d2b;
+      --red: #d8475f;
+      --surface: #ffffff;
+      --soft: #f5f7fb;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #eef1f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; }
+    .page { max-width: 1120px; margin: 0 auto; padding: 22px 16px 44px; }
+    .hero {
+      overflow: hidden;
+      position: relative;
+      padding: 42px 36px 34px;
+      color: white;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #4058df 0%, #7645bf 58%, #b34b8b 100%);
+      box-shadow: 0 18px 50px rgba(68, 70, 165, .25);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 290px;
+      height: 290px;
+      right: -90px;
+      top: -120px;
+      border: 50px solid rgba(255,255,255,.08);
+      border-radius: 50%;
+    }
+    .eyebrow { font-size: 13px; font-weight: 700; letter-spacing: .14em; opacity: .85; }
+    h1 { position: relative; z-index: 1; margin: 8px 0 8px; font-size: 34px; line-height: 1.2; }
+    .hero p { position: relative; z-index: 1; max-width: 740px; margin: 0; font-size: 16px; opacity: .92; }
+    .hero-meta { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+    .hero-pill { padding: 6px 11px; border: 1px solid rgba(255,255,255,.25); border-radius: 999px; background: rgba(255,255,255,.11); font-size: 12px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin: 18px 0 0; overflow: hidden; border-radius: 14px; background: var(--line); box-shadow: 0 5px 18px rgba(35,44,73,.07); }
+    .stat { padding: 16px; background: white; text-align: center; }
+    .stat strong { display: block; color: var(--blue); font-size: 23px; }
+    .stat span { color: var(--muted); font-size: 12px; }
+    .recommendation {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+      padding: 22px;
+      border: 1px solid #f1debc;
+      border-radius: 15px;
+      background: #fff9ed;
+    }
+    .recommendation h2 { margin: 0 0 8px; font-size: 19px; }
+    .recommendation p { margin: 0; color: #624d2e; font-size: 14px; }
+    .action-list { margin: 0; padding-left: 21px; color: #624d2e; font-size: 13px; }
+    .action-list li + li { margin-top: 5px; }
+    .toolbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin: 28px 0 16px; }
+    .toolbar h2 { margin: 0; font-size: 22px; }
+    .filters { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 7px; }
+    .filter {
+      appearance: none;
+      padding: 7px 12px;
+      border: 1px solid #dce1eb;
+      border-radius: 999px;
+      color: #596277;
+      background: white;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .filter.active { border-color: var(--blue); color: white; background: var(--blue); }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .card { display: flex; flex-direction: column; min-height: 100%; padding: 21px; border: 1px solid var(--line); border-radius: 15px; background: white; box-shadow: 0 3px 12px rgba(31,43,74,.05); }
+    .card.top { border-color: #d8cdf7; box-shadow: 0 7px 22px rgba(91,75,180,.12); }
+    .card.hidden { display: none; }
+    .card-head { display: flex; align-items: flex-start; gap: 13px; }
+    .score { flex: 0 0 52px; padding: 7px 4px; border-radius: 10px; color: white; background: linear-gradient(145deg, var(--blue), var(--purple)); text-align: center; }
+    .score b { display: block; font-size: 18px; line-height: 1.1; }
+    .score small { font-size: 9px; opacity: .85; }
+    .card h3 { margin: 1px 0 7px; font-size: 17px; line-height: 1.35; }
+    .deadline { color: var(--red); font-size: 12px; font-weight: 700; }
+    .deadline.safe { color: var(--green); }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 14px 0 12px; }
+    .tag { padding: 3px 9px; border-radius: 999px; background: #edf0ff; color: #4054bd; font-size: 11px; }
+    .tag.money { background: #e7f6ef; color: #147254; }
+    .tag.local { background: #fff0e6; color: #b85822; }
+    .tag.urgent { background: #ffebef; color: #bd314b; }
+    .facts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 14px; padding: 12px; border-radius: 10px; background: var(--soft); font-size: 12.5px; }
+    .fact span { display: block; color: var(--muted); font-size: 10px; }
+    .reason { flex: 1; margin: 13px 0 0; color: #4e596e; font-size: 13px; }
+    .reason strong { color: var(--ink); }
+    .caution { margin-top: 10px; padding: 8px 10px; border-left: 3px solid #e0a048; color: #72562d; background: #fff9ed; font-size: 11px; }
+    .card-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 16px; padding-top: 13px; border-top: 1px solid #edf0f5; }
+    .source { color: #8991a3; font-size: 10px; }
+    .btn { padding: 8px 14px; border-radius: 8px; color: white; background: var(--blue); text-decoration: none; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .btn:hover { background: #3d51ce; }
+    .method { margin-top: 26px; padding: 22px; border-radius: 14px; background: white; border: 1px solid var(--line); }
+    .method h2 { margin: 0 0 10px; font-size: 18px; }
+    .method p { margin: 5px 0; color: var(--muted); font-size: 12px; }
+    footer { padding: 22px 8px 0; color: #7e879a; text-align: center; font-size: 11px; }
+    @media (max-width: 760px) {
+      .hero { padding: 32px 22px 28px; }
+      h1 { font-size: 26px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .recommendation, .grid { grid-template-columns: 1fr; }
+      .toolbar { align-items: flex-start; flex-direction: column; }
+      .filters { justify-content: flex-start; }
+      .facts { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<main class="page">
+  <section class="hero">
+    <div class="eyebrow">AI OPPORTUNITY RADAR · SHENZHEN</div>
+    <h1>AI 竞赛与创业机会雷达</h1>
+    <p>专为深圳 AI 创业者与 OPC 筛选：最近 30 天新发布或仍可报名，且能带来奖金、算力、订单、融资、孵化或行业曝光的机会。</p>
+    <div class="hero-meta">
+      <span class="hero-pill">📍 深圳 / 大湾区优先</span>
+      <span class="hero-pill">🌏 全国与全球线上补充</span>
+      <span class="hero-pill">🔄 每日 12:00 更新</span>
+      <span class="hero-pill">核验时间：2026-09-23 21:43</span>
+    </div>
+  </section>
+
+  <section class="stats" aria-label="机会统计">
+    <div class="stat"><strong>11</strong><span>当前可行动机会</span></div>
+    <div class="stat"><strong>6</strong><span>深圳 / 大湾区</span></div>
+    <div class="stat"><strong>7</strong><span>现金或商业资源</span></div>
+    <div class="stat"><strong>3</strong><span>7 天内截止</span></div>
+  </section>
+
+  <section class="recommendation">
+    <div>
+      <h2>🎯 给你的报名优先级</h2>
+      <p><strong>先投德邻杯，再投 Spotlight。</strong>前者与你的“深圳 + AI 创业 + 已有产品雏形”匹配度最高，冠军 200 万元无条件现金奖励，入选团队还有投资与 10 周孵化；后者适合有可演示 Agent 产品或智能硬件方向的团队，可获得 GOSIM 主舞台曝光和产业连接。</p>
+    </div>
+    <ol class="action-list">
+      <li>今天先整理一版 10–12 页 BP，9 月 30 日前投德邻杯。</li>
+      <li>把同一产品剪成 1 分钟 Demo，10 月 4 日前投 Spotlight。</li>
+      <li>若产品可接 MCP / AWS，再复用 Demo 报 Amazon 线上赛。</li>
+    </ol>
+  </section>
+
+  <div class="toolbar">
+    <h2>仍可报名的精选机会</h2>
+    <div class="filters" role="group" aria-label="筛选机会">
+      <button class="filter active" data-filter="all">全部</button>
+      <button class="filter" data-filter="shenzhen">深圳优先</button>
+      <button class="filter" data-filter="startup">创业 / 融资</button>
+      <button class="filter" data-filter="hackathon">开发赛</button>
+      <button class="filter" data-filter="evaluation">模型测评</button>
+    </div>
+  </div>
+
+  <section class="grid" id="opportunityGrid">
+    <article class="card top" data-categories="shenzhen startup">
+      <div class="card-head"><div class="score"><b>98</b><small>匹配度</small></div><div><h3>德邻杯｜2026 AI 创业大赛</h3><div class="deadline">⏰ 9 月 30 日截止</div></div></div>
+      <div class="tags"><span class="tag local">深圳决赛</span><span class="tag money">冠军 ¥200 万</span><span class="tag">最高 ¥500 万投资</span></div>
+      <div class="facts"><div class="fact"><span>参赛对象</span>AI 应用 / AI 硬件创业团队，个人也可</div><div class="fact"><span>项目门槛</span>已有可展示、可体验或正在验证的产品</div><div class="fact"><span>决赛</span>10 月 15–16 日 · 深圳</div><div class="fact"><span>入选收益</span>15 支团队进入 10 周深度孵化</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>创业阶段不限、路演人就是创始人；现金、投资、住宿办公、算力和硬件实验室形成完整加速链，与你当前 OPC 阶段最贴合。</p>
+      <div class="card-foot"><span class="source">官方：德邻资本｜近 6 天上线</span><a class="btn" href="https://delincapital.com.cn/delin-cup.html" target="_blank" rel="noopener noreferrer">立即查看 / 报名</a></div>
+    </article>
+
+    <article class="card top" data-categories="shenzhen startup hackathon">
+      <div class="card-head"><div class="score"><b>94</b><small>匹配度</small></div><div><h3>Spotlight Shenzhen｜下一代 AI 原生产品</h3><div class="deadline">⏰ 中国区 10 月 4 日 23:59 截止</div></div></div>
+      <div class="tags"><span class="tag local">深圳冲刺</span><span class="tag">GOSIM 主舞台</span><span class="tag money">差旅支持</span></div>
+      <div class="facts"><div class="fact"><span>寻找方向</span>Agentic UX + 智能硬件 / 跨设备系统</div><div class="fact"><span>申请材料</span>交互原型 + 1 分钟 Demo + 构建计划</div><div class="fact"><span>核心评审</span>产品价值与 UX 60%，完成度 40%</div><div class="fact"><span>权益</span>展位、主舞台演示、企业与投资人连接</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>它看重真实用户问题和可验证原型，不要求成熟公司；如果你的 Agent 能跨设备完成任务，深圳现场曝光价值很高。</p>
+      <div class="caution">需要硬件或设备连接；纯聊天机器人不符合方向。</div>
+      <div class="card-foot"><span class="source">官方：GOSIM Spotlight｜9 月更新</span><a class="btn" href="https://spotlight.gosim.org/shenzhen2026/" target="_blank" rel="noopener noreferrer">查看申请要求</a></div>
+    </article>
+
+    <article class="card top" data-categories="shenzhen startup hackathon">
+      <div class="card-head"><div class="score"><b>91</b><small>匹配度</small></div><div><h3>第三届“兴智杯”全国人工智能创新应用大赛</h3><div class="deadline safe">🟢 已开放，按各赛题官网截止时间</div></div></div>
+      <div class="tags"><span class="tag local">深圳龙岗</span><span class="tag">中国信通院</span><span class="tag money">产业资源 / 算力</span></div>
+      <div class="facts"><div class="fact"><span>赛道</span>智能体、具身智能、AI for Science 等</div><div class="fact"><span>对象</span>企业、高校、科研院所、创新团队</div><div class="fact"><span>赛程</span>初赛 8–11 月，总决赛 12 月深圳</div><div class="fact"><span>权益</span>案例集、政策、投资、场地、技术转移</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>这是本地最强产业落地型赛事之一，赛题来自真实行业；若你需要客户场景、权威背书或龙岗资源，价值高于单纯奖金赛。</p>
+      <div class="card-foot"><span class="source">官方：深圳政府 / 大赛官网｜9 月 1 日启动</span><a class="btn" href="http://www.aiinnovation.com.cn" target="_blank" rel="noopener noreferrer">进入大赛官网</a></div>
+    </article>
+
+    <article class="card" data-categories="shenzhen hackathon">
+      <div class="card-head"><div class="score"><b>88</b><small>匹配度</small></div><div><h3>GOSIM Agentic App Hackathon 2026</h3><div class="deadline">🚨 9 月 23 日 23:59 报名截止</div></div></div>
+      <div class="tags"><span class="tag urgent">今天截止</span><span class="tag local">深圳展示</span><span class="tag">线上三轮</span></div>
+      <div class="facts"><div class="fact"><span>方向</span>基于纯 Rust Agent 栈打造 Agent-native App</div><div class="fact"><span>初赛提交</span>9 月 28 日前提交原型、源码与短视频</div><div class="fact"><span>资格</span>个人或团队；每位成员单独报名</div><div class="fact"><span>权益</span>前 2–3 队受邀 10 月 17 日深圳展示</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>如果已有 Agent Demo，最快几天可复用完成参赛作品；深圳展示能接触开源 AI 开发者和产业方。</p>
+      <div class="caution">时间极紧；仅建议已有可运行原型、今晚能完成报名的人参加。</div>
+      <div class="card-foot"><span class="source">官方：GOSIM Create｜9 月 13 日开放</span><a class="btn" href="https://create.gosim.org/agenticapp26/?lang=zh" target="_blank" rel="noopener noreferrer">查看规则 / 报名</a></div>
+    </article>
+
+    <article class="card" data-categories="shenzhen startup hackathon">
+      <div class="card-head"><div class="score"><b>86</b><small>匹配度</small></div><div><h3>Monad Metropolis 全球黑客松</h3><div class="deadline safe">🟢 10 月 13 日结束 · 9 月 26 日深圳 Hacker House</div></div></div>
+      <div class="tags"><span class="tag money">$250,000+ 奖金与资源</span><span class="tag local">深圳线下</span><span class="tag">AI Agent × 支付</span></div>
+      <div class="facts"><div class="fact"><span>方向</span>Agentic Finance、交易、支付与基础设施</div><div class="fact"><span>形式</span>6 周全球线上赛，可独立参加深圳活动</div><div class="fact"><span>资源</span>Qwen、Kimi、混元等伙伴模型与工具</div><div class="fact"><span>现场价值</span>投资人、Mentor、Builder Demo 与组队</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>若产品涉及跨境支付、金融工作流或能执行交易的 Agent，这项赛事同时给现金、生态资源和深圳本地投资连接。</p>
+      <div class="card-foot"><span class="source">官方：Monad / Luma｜9 月进行中</span><a class="btn" href="https://luma.com/metropolis-shenzhen-sep-2026?locale=zh" target="_blank" rel="noopener noreferrer">查看深圳站</a></div>
+    </article>
+
+    <article class="card top" data-categories="startup hackathon">
+      <div class="card-head"><div class="score"><b>84</b><small>匹配度</small></div><div><h3>Amazon Build, Ship, Shape 全球开发者赛</h3><div class="deadline safe">🟢 10 月 23 日 12:00 PDT 截止</div></div></div>
+      <div class="tags"><span class="tag money">$138,000 现金</span><span class="tag money">AWS Credits</span><span class="tag">Alexa+ / MCP</span></div>
+      <div class="facts"><div class="fact"><span>赛道</span>Fire TV、Alexa+、Bee、Ring</div><div class="fact"><span>适合切入</span>自托管 MCP Server / Agent Skill</div><div class="fact"><span>设备要求</span>Ring 可用模拟器，无需实物设备</div><div class="fact"><span>提交</span>工作 Demo、代码仓库、产品反馈</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>Alexa+ 赛道允许用自建 Web 前端演示 MCP，不需要拿到封闭预览工具；适合将已有 Agent 产品包装成全球化案例。</p>
+      <div class="card-foot"><span class="source">官方：Amazon / Devpost｜8 月 31 日发布</span><a class="btn" href="https://amazonappdev2026.devpost.com/" target="_blank" rel="noopener noreferrer">查看奖金与规则</a></div>
+    </article>
+
+    <article class="card" data-categories="hackathon evaluation">
+      <div class="card-head"><div class="score"><b>82</b><small>匹配度</small></div><div><h3>Nebius × NVIDIA Global AI Hackathon</h3><div class="deadline safe">🟢 10 月 30 日 10:00 PDT 截止</div></div></div>
+      <div class="tags"><span class="tag money">$50,000 现金</span><span class="tag">NVIDIA 开源模型</span><span class="tag">全球线上</span></div>
+      <div class="facts"><div class="fact"><span>对象</span>AI Builder、ML 工程师、Founder</div><div class="fact"><span>目标</span>在开放基础设施上构建可工作的 AI 系统</div><div class="fact"><span>技术</span>NVIDIA 开源模型 + Nebius GPU</div><div class="fact"><span>结果</span>预计 2027 年 1 月公布</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>适合技术型 OPC，用一个完整 AI 系统展示推理、Agent 自动化或高性能部署能力；时间比本地比赛更充裕。</p>
+      <div class="card-foot"><span class="source">官方：Nebius / Devpost｜8 月 26 日发布</span><a class="btn" href="https://nebiusglobalaihackathon.devpost.com/" target="_blank" rel="noopener noreferrer">查看规则 / 参赛</a></div>
+    </article>
+
+    <article class="card" data-categories="startup">
+      <div class="card-head"><div class="score"><b>79</b><small>匹配度</small></div><div><h3>首届上海“人工智能＋消费”创新大赛</h3><div class="deadline">⏰ 9 月 30 日截止</div></div></div>
+      <div class="tags"><span class="tag">消费 AI</span><span class="tag money">孵化 / 算力</span><span class="tag">投融资对接</span></div>
+      <div class="facts"><div class="fact"><span>赛道</span>新产品、新场景、新模式</div><div class="fact"><span>组别</span>应用组与创客组，早期项目可报</div><div class="fact"><span>展会</span>10 月 22–25 日 WTCC 公开展示</div><div class="fact"><span>权益</span>试销、商圈场景、模速空间、资本</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>若产品服务商家经营、品牌营销、供应链或消费企业全球化，可直接投“AI 消费·新模式”，并借 WTCC 测试真实市场反馈。</p>
+      <div class="card-foot"><span class="source">官方：上海市商务委｜9 月 1 日发布</span><a class="btn" href="https://sww.sh.gov.cn/swdt/20260902/1a649917821f4da8829ce83f52f31db1.html" target="_blank" rel="noopener noreferrer">查看官方通知</a></div>
+    </article>
+
+    <article class="card" data-categories="startup hackathon evaluation">
+      <div class="card-head"><div class="score"><b>76</b><small>匹配度</small></div><div><h3>怀柔科学城 AI for Science · OPC 创新挑战赛</h3><div class="deadline safe">🟢 拟于 10 月 10 日截止</div></div></div>
+      <div class="tags"><span class="tag">OPC 专项</span><span class="tag money">产业订单</span><span class="tag money">奖金 / 算力 / 孵化</span></div>
+      <div class="facts"><div class="fact"><span>赛制</span>揭榜挂帅 + 48 小时黑客松</div><div class="fact"><span>真实题目</span>科研装置、科研 Agent、企业数字化</div><div class="fact"><span>参赛</span>全国开发者 / 创业者，单人可报</div><div class="fact"><span>奖励</span>悬赏奖金，优胜团队可直接签采购</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>少见的“比赛即采购”机会，OPC 商业模式也有独立方向；更适合愿意去北京参加 11 月现场赛、能做 B 端交付的人。</p>
+      <div class="card-foot"><span class="source">官方：怀柔科学城｜9 月 11 日启动</span><a class="btn" href="https://hsc.beijing.gov.cn/hsc/ywdt8/zxdt72/744123107/index.shtml" target="_blank" rel="noopener noreferrer">查看官方说明</a></div>
+    </article>
+
+    <article class="card" data-categories="evaluation hackathon">
+      <div class="card-head"><div class="score"><b>72</b><small>匹配度</small></div><div><h3>蚂蚁灵波具身大模型挑战赛</h3><div class="deadline safe">🟢 10 月 26 日 15:59 截止</div></div></div>
+      <div class="tags"><span class="tag money">¥280,000 奖池</span><span class="tag">模型复现 / 调优</span><span class="tag">真机评测</span></div>
+      <div class="facts"><div class="fact"><span>技术底座</span>开源 LingBot-VLA 2.0</div><div class="fact"><span>对象</span>全球企业、高校、个人开发者</div><div class="fact"><span>赛程</span>线上初赛 + 线下真机黑客松</div><div class="fact"><span>评测</span>训练调优、泛化能力、真机适配</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>这是本期最纯粹的“模型测评型”机会。若你做具身智能或模型工程，可通过统一评测拿到可量化成绩和行业背书。</p>
+      <div class="caution">训练与真机门槛较高；纯应用型团队不建议作为第一优先级。</div>
+      <div class="card-foot"><span class="source">官方：魔搭 × 蚂蚁灵波 × 天池｜9 月进行中</span><a class="btn" href="https://modelscope.cn/events/367/%E6%AF%94%E8%B5%9B%E4%BB%8B%E7%BB%8D" target="_blank" rel="noopener noreferrer">查看比赛详情</a></div>
+    </article>
+
+    <article class="card" data-categories="shenzhen startup">
+      <div class="card-head"><div class="score"><b>68</b><small>匹配度</small></div><div><h3>广东智能传感器创新创业大赛（增城）</h3><div class="deadline safe">🟢 10 月 31 日截止</div></div></div>
+      <div class="tags"><span class="tag local">广州 / 大湾区</span><span class="tag money">超 ¥2 亿订单需求</span><span class="tag">AI 硬件</span></div>
+      <div class="facts"><div class="fact"><span>对象</span>全球智能传感器企业与创业项目</div><div class="fact"><span>方向</span>MEMS、感知硬件、制造与 AIoT</div><div class="fact"><span>赛程</span>11 月初赛，12 月现场决赛</div><div class="fact"><span>资源</span>揭榜订单、产业扶持、量产与中试</div></div>
+      <p class="reason"><strong>为什么适合你：</strong>如果你的 AI 产品包含传感器、可穿戴或边缘设备，这是距离深圳近、产业链和订单都很实的一项机会。</p>
+      <div class="caution">软件 Agent 或纯 SaaS 项目匹配度较低。</div>
+      <div class="card-foot"><span class="source">官方：广州市工信局｜9 月 10 日发布</span><a class="btn" href="https://gxj.gz.gov.cn/yw/zwyw/content/post_11000224.html" target="_blank" rel="noopener noreferrer">查看官方通知</a></div>
+    </article>
+  </section>
+
+  <section class="method">
+    <h2>筛选与可信度说明</h2>
+    <p>范围：以今天向前 30 天内新发布、启动或仍明确开放报名的 AI 竞赛、模型评测、黑客松、创业扶持项目为主；深圳 / 广州优先，同时补充可从深圳线上参赛的全国和全球机会。</p>
+    <p>评分：综合地理便利、OPC 阶段匹配、奖励含金量、产业落地、准备成本与截止紧迫度；它是行动优先级，不代表赛事官方评级。</p>
+    <p>核验：优先引用政府、大赛官网、主办方或官方竞赛平台。报名截止、资格和奖金可能临时调整，提交前请再次阅读官方规则。</p>
+  </section>
+  <footer>AI 竞赛与创业机会雷达 · 为深圳 AI OPC 持续更新 · 下次计划更新：每日 12:00（北京时间）</footer>
+</main>
+<script>
+  const buttons = document.querySelectorAll('.filter');
+  const cards = document.querySelectorAll('.card');
+  buttons.forEach(button => button.addEventListener('click', () => {
+    buttons.forEach(item => item.classList.remove('active'));
+    button.classList.add('active');
+    const filter = button.dataset.filter;
+    cards.forEach(card => {
+      const matched = filter === 'all' || card.dataset.categories.split(' ').includes(filter);
+      card.classList.toggle('hidden', !matched);
+    });
+  }));
+</script>
+</body>
+</html>
