@@ -10,34 +10,39 @@
             padding: 0;
             box-sizing: border-box;
         }
+
+        html, body {
+            overflow-x: hidden;
+        }
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #172033;
+            background: #eef1f7;
             min-height: 100vh;
             padding: 20px;
         }
         
         .container {
-            max-width: 1200px;
+            max-width: 1120px;
             margin: 0 auto;
             background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border-radius: 22px;
+            box-shadow: 0 5px 18px rgba(35, 44, 73, 0.07);
             overflow: hidden;
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4058df 0%, #7645bf 58%, #b34b8b 100%);
             color: white;
             padding: 40px;
-            text-align: center;
+            text-align: left;
         }
         
         .header h1 {
-            font-size: 2.5em;
+            font-size: 34px;
+            line-height: 1.2;
             margin-bottom: 10px;
             font-weight: 700;
         }
@@ -117,12 +122,12 @@
         
         .event-card {
             background: white;
-            border: 2px solid #e9ecef;
+            border: 1px solid #e6eaf2;
             border-radius: 15px;
-            padding: 30px;
+            padding: 21px;
             margin-bottom: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 3px 12px rgba(31, 43, 74, 0.05);
             position: relative;
         }
         
@@ -153,7 +158,7 @@
         
         .event-title {
             font-size: 1.5em;
-            color: #667eea;
+            color: #172033;
             margin-bottom: 15px;
             font-weight: 600;
             padding-right: 80px;
@@ -228,7 +233,7 @@
         }
         
         .registration-info {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #4f63e9 0%, #7d48c9 100%);
             color: white;
             padding: 20px;
             border-radius: 10px;
@@ -308,6 +313,14 @@
             .event-title {
                 padding-right: 0;
             }
+        }
+
+        body.embedded {
+            padding-top: 10px;
+        }
+
+        body.embedded .container {
+            max-width: 1120px;
         }
     </style>
 </head>
@@ -513,7 +526,7 @@
     <script>
         // DAILY_EVENTS_START — 每日自动任务只更新这个数据对象。
         const currentEvents = {
-            update_time: "2026-09-26T12:04:00+08:00",
+            update_time: "2026-09-26T14:48:00+08:00",
             range_label: "2026年9月26日—10月10日",
             cities: {
                 shenzhen: {
@@ -599,7 +612,10 @@
             container.innerHTML = html;
         }
 
-        document.addEventListener('DOMContentLoaded', () => displayCurrentEvents(currentEvents));
+        document.addEventListener('DOMContentLoaded', () => {
+            if (new URLSearchParams(location.search).has('embedded')) document.body.classList.add('embedded');
+            displayCurrentEvents(currentEvents);
+        });
     </script>
 </body>
 </html>
