@@ -113,7 +113,65 @@
     .method h2 { margin: 0 0 10px; font-size: 18px; }
     .method p { margin: 5px 0; color: var(--muted); font-size: 12px; }
     footer { padding: 22px 8px 0; color: #7e879a; text-align: center; font-size: 11px; }
+    .portal-nav-wrap {
+      position: sticky;
+      z-index: 100;
+      top: 0;
+      padding: 10px 16px 0;
+      background: rgba(238, 241, 247, .92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+    }
+    .portal-nav {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 9px 10px 9px 16px;
+      border: 1px solid rgba(219, 224, 235, .95);
+      border-radius: 15px;
+      background: rgba(255, 255, 255, .96);
+      box-shadow: 0 7px 24px rgba(31, 43, 74, .08);
+    }
+    .portal-brand { min-width: 148px; }
+    .portal-brand strong { display: block; font-size: 14px; line-height: 1.2; }
+    .portal-brand span { color: var(--muted); font-size: 11px; }
+    .portal-tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); flex: 1; gap: 7px; }
+    .portal-tab {
+      min-height: 42px;
+      padding: 8px 12px;
+      border: 0;
+      border-radius: 10px;
+      color: #586176;
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 650;
+      text-align: center;
+    }
+    .portal-tab:hover { color: var(--blue); background: #f3f5ff; }
+    .portal-tab[aria-selected="true"] {
+      color: white;
+      background: linear-gradient(135deg, var(--blue), var(--purple));
+      box-shadow: 0 5px 13px rgba(79, 99, 233, .22);
+    }
+    .tab-panel[hidden] { display: none !important; }
+    .embed-panel { max-width: 1180px; margin: 0 auto; padding: 12px 0 28px; }
+    .embed-frame {
+      display: block;
+      width: 100%;
+      min-height: 1200px;
+      border: 0;
+      background: #eef1f7;
+    }
     @media (max-width: 760px) {
+      .portal-nav-wrap { padding: 7px 8px 0; }
+      .portal-nav { display: block; padding: 9px; border-radius: 13px; }
+      .portal-brand { display: flex; align-items: baseline; justify-content: space-between; min-width: 0; padding: 0 4px 8px; }
+      .portal-tabs { gap: 5px; }
+      .portal-tab { min-height: 44px; padding: 7px 6px; font-size: 12px; line-height: 1.25; }
       .hero { padding: 32px 22px 28px; }
       h1 { font-size: 26px; }
       .stats { grid-template-columns: repeat(2, 1fr); }
@@ -125,7 +183,18 @@
   </style>
 </head>
 <body>
-<main class="page">
+<div class="portal-nav-wrap">
+  <nav class="portal-nav" aria-label="每日情报分类">
+    <div class="portal-brand"><strong>每日情报总览</strong><span>每天 12:00 更新</span></div>
+    <div class="portal-tabs" role="tablist" aria-label="选择资讯页面">
+      <button class="portal-tab" id="tab-competitions" role="tab" aria-selected="true" aria-controls="panel-competitions" data-tab="competitions">AI 竞赛与测评</button>
+      <button class="portal-tab" id="tab-ai-events" role="tab" aria-selected="false" aria-controls="panel-ai-events" data-tab="ai-events" tabindex="-1">广深 AI 活动</button>
+      <button class="portal-tab" id="tab-cross-border" role="tab" aria-selected="false" aria-controls="panel-cross-border" data-tab="cross-border" tabindex="-1">跨境与出海活动</button>
+    </div>
+  </nav>
+</div>
+
+<main class="page tab-panel" id="panel-competitions" role="tabpanel" aria-labelledby="tab-competitions" data-panel="competitions">
   <section class="hero">
     <div class="eyebrow">AI OPPORTUNITY RADAR · SHENZHEN</div>
     <h1>AI 竞赛与创业机会雷达</h1>
@@ -300,7 +369,88 @@
   </section>
   <footer>AI 竞赛与创业机会雷达 · 为深圳 AI OPC 持续更新 · 下次计划更新：每日 12:00（北京时间）</footer>
 </main>
+
+<section class="embed-panel tab-panel" id="panel-ai-events" role="tabpanel" aria-labelledby="tab-ai-events" data-panel="ai-events" hidden>
+  <iframe class="embed-frame" title="深圳广州 AI 科技圈活动" src="ai-events.html"></iframe>
+</section>
+
+<section class="embed-panel tab-panel" id="panel-cross-border" role="tabpanel" aria-labelledby="tab-cross-border" data-panel="cross-border" hidden>
+  <iframe class="embed-frame" title="深圳广州跨境与出海活动" src="cross-border-events.html"></iframe>
+</section>
+
 <script>
+  const portalTabs = [...document.querySelectorAll('.portal-tab')];
+  const portalPanels = [...document.querySelectorAll('.tab-panel')];
+
+  function fitFrame(frame) {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc) return;
+      const height = Math.max(doc.documentElement.scrollHeight, doc.body.scrollHeight);
+      frame.style.height = `${height}px`;
+    } catch (error) {
+      frame.style.height = '1600px';
+    }
+  }
+
+  function watchFrame(frame) {
+    if (frame.dataset.watching === 'true') return;
+    frame.dataset.watching = 'true';
+    fitFrame(frame);
+    try {
+      const doc = frame.contentDocument;
+      const resizeObserver = new ResizeObserver(() => fitFrame(frame));
+      resizeObserver.observe(doc.documentElement);
+      resizeObserver.observe(doc.body);
+      const mutationObserver = new MutationObserver(() => fitFrame(frame));
+      mutationObserver.observe(doc.body, { childList: true, subtree: true, attributes: true });
+    } catch (error) {
+      // 同源页面正常情况下可自动适配；异常时保留最小高度。
+    }
+  }
+
+  function activatePortalTab(name, updateHash = true) {
+    const selectedTab = portalTabs.find(tab => tab.dataset.tab === name) || portalTabs[0];
+    portalTabs.forEach(tab => {
+      const active = tab === selectedTab;
+      tab.setAttribute('aria-selected', String(active));
+      tab.tabIndex = active ? 0 : -1;
+    });
+    portalPanels.forEach(panel => {
+      const active = panel.dataset.panel === selectedTab.dataset.tab;
+      panel.hidden = !active;
+      if (active) {
+        const frame = panel.querySelector('iframe');
+        if (frame) {
+          if (frame.contentDocument?.readyState === 'complete') watchFrame(frame);
+        }
+      }
+    });
+    if (updateHash) history.replaceState(null, '', `#${selectedTab.dataset.tab}`);
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }
+
+  portalTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activatePortalTab(tab.dataset.tab));
+    tab.addEventListener('keydown', event => {
+      if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      let next = index;
+      if (event.key === 'ArrowRight') next = (index + 1) % portalTabs.length;
+      if (event.key === 'ArrowLeft') next = (index - 1 + portalTabs.length) % portalTabs.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = portalTabs.length - 1;
+      portalTabs[next].focus();
+      activatePortalTab(portalTabs[next].dataset.tab);
+    });
+  });
+
+  document.querySelectorAll('.embed-frame').forEach(frame => {
+    frame.addEventListener('load', () => watchFrame(frame));
+  });
+  window.addEventListener('resize', () => document.querySelectorAll('.embed-frame').forEach(fitFrame));
+  activatePortalTab(location.hash.slice(1) || 'competitions', false);
+
   const buttons = document.querySelectorAll('.filter');
   const cards = document.querySelectorAll('.card');
   buttons.forEach(button => button.addEventListener('click', () => {
