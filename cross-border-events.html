@@ -353,92 +353,105 @@
     <script>
         // DAILY_EVENTS_START — 每日自动任务只更新这个数据对象。
         const currentEvents = {
-            "update_time": "2026-09-29T08:07:05+08:00",
-            "range_label": "2026年9月29日—10月29日",
-            "cities": {
-                        "shenzhen": {
-                                    "name": "深圳市",
-                                    "flag": "🏙️",
-                                    "events": [
-                                                {
-                                                            "title": "鹏城集慧，智赴未来——2026中国（深圳）·中东·东北亚经贸交流活动",
-                                                            "date": "2026年9月29日（周二）14:00—17:30",
-                                                            "location": "深圳市福田区河套科创中心D栋1楼会议室",
-                                                            "highlights": [
-                                                                        "深圳市商务局与河套深港科技创新合作区深圳园区发展署联合主办",
-                                                                        "中东与韩国代表分享产业和投资政策，议程涵盖海外财税与合规经验",
-                                                                        "深圳 OPC 跨境创业者可据此评估中东或韩国市场准入成本并对接当地资源"
-                                                            ],
-                                                            "registration": "今日14:00开始；官方通知提供二维码申请参会，需提前获确认再前往。邀约对象为在深相关企业、商协会；个人 OPC 资格、费用、剩余名额及报名截止未公布。",
-                                                            "source_url": "https://commerce.sz.gov.cn/ztzl/zcq/zxfw/hdxx/content/post_12988151.html",
-                                                            "priority": true
-                                                },
-                                                {
-                                                            "title": "AWS 软件企业峰会暨 Marketplace 用户大会｜AI 软件出海",
-                                                            "date": "2026年10月13—14日；首日09:30起，具体场次见官方议程",
-                                                            "location": "深圳蛇口希尔顿南海酒店",
-                                                            "highlights": [
-                                                                        "亚马逊云科技主办，讨论 Agentic AI 产品创新与全球商业化",
-                                                                        "Marketplace 卖家、采购者对接；适合深圳 OPC 验证海外企业需求和渠道合作",
-                                                                        "现场 Startup 路演另需入选；参加大会不保证融资、上架或成交"
-                                                            ],
-                                                            "registration": "官方报名表开放，可选 Entrepreneur / Co-Founder 等身份；需填写公司名和工作邮箱。费用、报名截止和个人参会资格未公布，提交前核对；报名页有验证步骤。",
-                                                            "source_url": "https://aws.amazon.com/cn/campaigns/isv-marketplace-conference/",
-                                                            "priority": true
-                                                },
-                                                {
-                                                            "title": "Community Day 2026 · 深圳｜出海、Agent 与 OPC 实践",
-                                                            "date": "2026年10月17日（周六）09:00—18:00",
-                                                            "location": "深圳市宝安区新安街道兴东社区70区雪花路1号雪花科技大厦6楼",
-                                                            "highlights": [
-                                                                        "亚马逊云科技 User Group 主办，官方报名页确认免费且提供立即报名入口",
-                                                                        "设出海、安全合规、Agent / Data、OPC / FDE 等方向，交流真实业务架构与落地经验",
-                                                                        "适合深圳 OPC 带 AI 产品 Demo，寻找出海技术伙伴；活动不承诺融资或客户订单"
-                                                            ],
-                                                            "registration": "免费，主办方活动行页面开放预约报名；报名截止、审核条件及剩余名额未公布，以报名成功确认和最新通知为准。",
-                                                            "source_url": "https://usergroup.huodongxing.com/event/9872593983600",
-                                                            "priority": true
-                                                }
-                                    ]
-                        },
-                        "guangzhou": {
-                                    "name": "广州市",
-                                    "flag": "🏙️",
-                                    "events": [
-                                                {
-                                                            "title": "第140届广交会｜第一期与第二期产业对接",
-                                                            "date": "第一期10月15—19日；第二期10月23—27日（第三期不在本轮范围）",
-                                                            "location": "广州中国进出口商品交易会展馆；亦可使用官方线上贸易配对",
-                                                            "highlights": [
-                                                                        "商务部确认两期日程；适合 AI 硬件、供应链工具与跨境卖家调研供应商",
-                                                                        "深圳 OPC 可先通过官网找产品、发布采购需求，再决定线下参加；现场对接不承诺融资或订单",
-                                                                        "第一期重点先进制造与服务机器人，第二期品质家居；可先在线匹配供应商，境内办证须走专用系统。"
-                                                            ],
-                                                            "registration": "官方采购商指南与境内办证系统入口可访问；境内采购商需最新邀请码、审核通过并成功办理证件，线上账号不等于线下入场资格。费用和本届办理截止未核实，个人不能默认入场。",
-                                                            "source_url": "https://www.cantonfair.org.cn/en-US/buyerguide",
-                                                            "priority": false
-                                                }
-                                    ]
-                        },
-                        "online": {
-                                    "name": "线上｜AI 出海与增长",
-                                    "flag": "🌐",
-                                    "events": [
-                                                {
-                                                            "title": "All Day AI｜SHIP：AI 产品设计与 GTM",
-                                                            "date": "2026年10月22日 18:00 起（北京时间；SHIP 场次见官网议程）",
-                                                            "location": "全球线上，英语活动",
-                                                            "highlights": [
-                                                                        "免费线上大会的 SHIP 轨道讨论产品交付与商业化",
-                                                                        "适合深圳 OPC 出海团队完善产品定位与市场进入思路；非平台招商、融资承诺"
-                                                            ],
-                                                            "registration": "官网注册开放，免费；未公布报名截止时间。",
-                                                            "source_url": "https://www.alldayai.com/",
-                                                            "priority": true
-                                                }
-                                    ]
-                        }
-            }
+    "update_time": "2026-09-30T08:10:40+08:00",
+    "range_label": "2026年9月30日—10月30日",
+    "cities": {
+        "shenzhen": {
+            "name": "深圳市",
+            "flag": "🏙️",
+            "events": [
+                {
+                    "title": "AWS 软件企业峰会暨 Marketplace 用户大会｜AI 软件出海",
+                    "date": "2026年10月13—14日；首日09:30起，具体场次见官方议程",
+                    "location": "深圳蛇口希尔顿南海酒店",
+                    "highlights": [
+                        "亚马逊云科技主办，讨论 Agentic AI 产品创新与全球商业化",
+                        "Marketplace 卖家、采购者对接；适合深圳 OPC 验证海外企业需求和渠道合作",
+                        "现场 Startup 路演另需入选；参加大会不保证融资、上架或成交"
+                    ],
+                    "registration": "官方报名表开放，可选 Entrepreneur / Co-Founder 等身份；需填写公司名和工作邮箱。费用、报名截止和个人参会资格未公布，提交前核对；报名页有验证步骤。",
+                    "source_url": "https://aws.amazon.com/cn/campaigns/isv-marketplace-conference/",
+                    "priority": true
+                },
+                {
+                    "title": "Community Day 2026 · 深圳｜出海、Agent 与 OPC 实践",
+                    "date": "2026年10月17日（周六）09:00—18:00",
+                    "location": "深圳市宝安区新安街道兴东社区70区雪花路1号雪花科技大厦6楼",
+                    "highlights": [
+                        "亚马逊云科技 User Group 主办，官方报名页确认免费且提供立即报名入口",
+                        "设出海、安全合规、Agent / Data、OPC / FDE 等方向，交流真实业务架构与落地经验",
+                        "适合深圳 OPC 带 AI 产品 Demo，寻找出海技术伙伴；活动不承诺融资或客户订单"
+                    ],
+                    "registration": "免费，主办方活动行页面开放预约报名；报名截止、审核条件及剩余名额未公布，以报名成功确认和最新通知为准。",
+                    "source_url": "https://usergroup.huodongxing.com/event/9872593983600",
+                    "priority": true
+                },
+                {
+                    "title": "GGE 深圳跨境出海博览会｜AI 选品与海外渠道",
+                    "date": "2026年10月20—23日；具体论坛时段见官网",
+                    "location": "深圳国际会展中心（宝安新馆）",
+                    "highlights": [
+                        "主办方官网开放免费观众预约；展会聚焦跨境平台、供应链及海外分销对接",
+                        "设智能选品、AI 营销、数字客服与智慧供应链相关展示及同期论坛",
+                        "适合深圳 OPC 调研跨境卖家需求、演示 AI 工具；商务合作需自行洽谈"
+                    ],
+                    "registration": "官网提供“观众报名”免费预约入口；论坛席位、报名截止和展会入场规则以预约确认及主办方通知为准。",
+                    "source_url": "https://www.cbelink.com/",
+                    "priority": true
+                },
+                {
+                    "title": "Zoholics 2026 深圳站｜AI 出海与全球增长",
+                    "date": "2026年10月22日；具体时段待主办方公布",
+                    "location": "深圳；详细会场待主办方公布",
+                    "highlights": [
+                        "Zoho 官方活动聚焦企业出海、AI 业务应用与全球增长",
+                        "营销、销售、客服及跨国协同实践，适合 AI OPC 寻找企业客户场景和生态伙伴",
+                        "活动以经验交流为主，未承诺融资、订单或上架资源"
+                    ],
+                    "registration": "Zoho 官网提供报名二维码；费用、截止和名额未公布，提交时核对确认信息。",
+                    "source_url": "https://www.zoho.com.cn/content/2026-zoholics-registration.html",
+                    "priority": false
+                }
+            ]
+        },
+        "guangzhou": {
+            "name": "广州市",
+            "flag": "🏙️",
+            "events": [
+                {
+                    "title": "第140届广交会｜第一期与第二期产业对接",
+                    "date": "第一期10月15—19日；第二期10月23—27日（第三期不在本轮范围）",
+                    "location": "广州中国进出口商品交易会展馆；亦可使用官方线上贸易配对",
+                    "highlights": [
+                        "商务部确认两期日程；适合 AI 硬件、供应链工具与跨境卖家调研供应商",
+                        "深圳 OPC 可先通过官网找产品、发布采购需求，再决定线下参加；现场对接不承诺融资或订单",
+                        "第一期重点先进制造与服务机器人，第二期品质家居；可先在线匹配供应商，境内办证须走专用系统。"
+                    ],
+                    "registration": "官方采购商指南与境内办证系统入口可访问；境内采购商需最新邀请码、审核通过并成功办理证件，线上账号不等于线下入场资格。费用和本届办理截止未核实，个人不能默认入场。",
+                    "source_url": "https://www.cantonfair.org.cn/en-US/buyerguide",
+                    "priority": false
+                }
+            ]
+        },
+        "online": {
+            "name": "线上｜AI 出海与增长",
+            "flag": "🌐",
+            "events": [
+                {
+                    "title": "All Day AI｜SHIP：AI 产品设计与 GTM",
+                    "date": "2026年10月22日 18:00 起（北京时间；SHIP 场次见官网议程）",
+                    "location": "全球线上，英语活动",
+                    "highlights": [
+                        "免费线上大会的 SHIP 轨道讨论产品交付与商业化",
+                        "适合深圳 OPC 出海团队完善产品定位与市场进入思路；非平台招商、融资承诺"
+                    ],
+                    "registration": "官网注册开放，免费；未公布报名截止时间。",
+                    "source_url": "https://www.alldayai.com/",
+                    "priority": true
+                }
+            ]
+        }
+    }
 };
         // DAILY_EVENTS_END
 
